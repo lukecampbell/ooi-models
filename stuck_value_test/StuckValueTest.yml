@@ -1,0 +1,8 @@
+StuckValueTest:
+  instrument_array: string
+  instrument_class: string
+  reference_designator: string*
+  data_products: string*
+  units: string
+  resolution_r: double
+  number_n: integer

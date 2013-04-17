@@ -1,0 +1,11 @@
+GRT:
+  instrument_array: string
+  instrument_class: string
+  reference_designator: string*
+  data_products: string*
+  units: string
+  flagged: string
+  grt_min: double
+  grt_max: double
+
+

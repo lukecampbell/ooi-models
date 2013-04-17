@@ -1,0 +1,12 @@
+ParameterFunction:
+  scenario: string
+  id: integer*
+  name: string
+  instrument_class: string
+  instrument_series: string
+  function_type: string
+  function: string
+  owner: string
+  args: string
+  kwargs: string
+
