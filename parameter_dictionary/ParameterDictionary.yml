@@ -1,0 +1,13 @@
+ParameterDictionary:
+  scenario: string
+  id: integer*
+  confluence: string
+  name: string
+  parameter_ids: memo
+  temporal_parameter: integer
+
+ParameterRelation:
+  parameter_id: integer*
+  pdict_id: integer*
+
+

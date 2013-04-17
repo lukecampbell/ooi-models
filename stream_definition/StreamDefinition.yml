@@ -1,0 +1,10 @@
+StreamDefinition:
+  scenario: string
+  id: small_string*
+  comment: string
+  org_ids: string
+  name: string
+  description: memo
+  pdict_name: string
+  available_fields: string
+
