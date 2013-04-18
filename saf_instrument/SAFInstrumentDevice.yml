@@ -1,0 +1,23 @@
+SAFInstrumentDevice:
+  iclass: string
+  first_deployment_date: string
+  platform_agent_type: string
+  relative_depth: string
+  data_agent_recovery: string
+  data_agent_rt: string
+  data_product_list: memo
+  deploy_date: string
+  depth_port_max: string
+  depth_port_min: string
+  depth_subsite: string
+  id: string*
+  instrument_agent_rt: string
+  instrument_class: string
+  instrument_model: string
+  instrument_model1: string
+  instrument_series: string
+  instrument_subseries: string
+  latitude: string
+  longitude: string
+  makemodel: string
+  ready_for_2013: string

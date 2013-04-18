@@ -27,8 +27,6 @@ def base(connection):
     with open(pkg_resources.resource_filename(__name__,'StreamDefinitions.csv')) as f:
         dr = csv.DictReader(f)
         for row in dr:
-            if row['SKIP']:
-                continue
             if 'doc' in row['Scenario'].lower():
                 continue
             if 'void' in row['Scenario'].lower():
@@ -38,14 +36,12 @@ def base(connection):
             args = dict(
                 scenario = row['Scenario'],
                 id = row['ID'],
-                name = row['Name'],
-                instrument_class = row['Instrument Class'],
-                instrument_series = row['Instrument Series'],
-                function_type = row['Function Type'],
-                function = row['Function'],
-                owner = row['Owner'],
-                args = row['Args'],
-                kwargs = row['Kwargs']
+                comment = row['COMMENT'],
+                org_ids = row['org_ids'],
+                name = row['sdef/name'],
+                description = row['sdef/description'],
+                pdict_name=row['param_dict_name'],
+                available_fields=row['available_fields']
                 )
 
 

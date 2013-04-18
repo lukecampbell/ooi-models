@@ -1,0 +1,32 @@
+SAFDataProduct:
+  id: integer*
+  interp1: string
+  combine_qc_flags: string
+  condcmp: string
+  doors_l2_rq: memo
+  doors_l2_text: memo
+  dcn: memo
+  dp_level: string
+  name: string
+  polyval_qc: string
+  glblrng_qc: string
+  gradtst_qc: string
+  loclrng_qc: string
+  modulus_qc: string
+  notes: memo
+  flow_diag: memo
+  solarel_qc: string
+  spketst_qc: string
+  stuckvl_qc: string
+  trndtst_qc: string
+  units: string
+  code: string
+  diagrams: string
+  dps: string
+  dp_id: string
+  instrument_class_list: memo
+  level: string
+  description: string
+  regime: string
+  dp_units: string
+

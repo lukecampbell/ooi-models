@@ -13,15 +13,34 @@ def connection():
     return connection
 
 def initialize(connection):
+    connection.cursor.execute('DROP VIEW pdict_view')
     ParameterDictionary.reinitialize(connection)
     ParameterRelation.reinitialize(connection)
-    pdict_view='''CREATE VIEW pdict_view 
+    pdict_view='''CREATE VIEW pdict_view(
+        pdict_scenario,
+        pdict_id,
+        pdict_confluence,
+        pdict_name,
+        pdict_parameter_ids,
+        pdict_temporal_parameter,
+        param_scenario,
+        param_confluence,
+        param_name,
+        param_id,
+        param_parameter_type,
+        param_value_encoding,
+        param_code_set,
+        param_uom,
+        param_fill_value,
+        param_parameter_function_id,
+        param_pmap,
+        param_lookup_value,
+        param_qc_functions,
+        param_data_product)
     AS 
     SELECT 
-        ParameterDictionaries.id AS pdict_id,
-        ParameterDictionaries.name AS pdict_name,
-        ParameterContexts.id AS p_id,
-        ParameterContexts.name AS p_name 
+        ParameterDictionaries.*,
+        ParameterContexts.*
     FROM ParameterRelations 
         INNER JOIN ParameterDictionaries ON ParameterDictionaries.id=ParameterRelations.pdict_id 
         INNER JOIN ParameterContexts ON ParameterRelations.parameter_id=ParameterContexts.id;

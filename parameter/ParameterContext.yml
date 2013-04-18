@@ -9,7 +9,7 @@ ParameterContext:
   uom: string
   fill_value: string
   parameter_function_id: integer
-  pmap: string
+  pmap: memo
   lookup_value: string
   qc_functions: string
   data_product: string
