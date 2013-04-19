@@ -14,22 +14,12 @@ def connection():
 def initialize(connection):
     SAFInstrumentDevice.reinitialize(connection)
 
-def download():
-    base_url = 'https://docs.google.com/spreadsheet/pub?key=0AttCeOvLP6XMdG82NHZfSEJJOGdQTkgzb05aRjkzMEE'
-    url = '%s&single=true&gid=68&output=csv' % base_url
-    response = requests.get(url)
-    if response.status_code == 200:
-        with open(pkg_resources.resource_filename(__name__,'SAFInstrumentDevices.csv'),'w') as f:
-            f.write(response.content)
-    
 
 def base(connection):
     with open(pkg_resources.resource_filename(__name__,'SAFInstrumentDevices.csv')) as f:
         dr = csv.DictReader(f)
         for row in dr:
             for k,v in row.iteritems():
-                if len(v) > 128:
-                    print k
                 if '%' in v:
                     row[k] = v.replace('%','percent')
             args = dict(

@@ -43,6 +43,5 @@ def base(connection):
                     time_interval=time_interval,
                     polynomial_order=polynomial_order,
                     standard_deviation=standard_deviation)
-            print entry
             entry.create(connection)
 

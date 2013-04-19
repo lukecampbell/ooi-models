@@ -1,0 +1,16 @@
+Constraint:
+  scenario: string
+  id: small_string*
+  owner_id: small_string
+  confluence: memo
+  type: small_string
+  south: double
+  north: double
+  west: double
+  east: double
+  top: double
+  bottom: double
+  vertical_direction: small_string
+  start: string
+  end: string
+

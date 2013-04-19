@@ -1,0 +1,13 @@
+Attachment:
+  id: string*
+  scenario: small_string
+  resource_id: string
+  file_path: string
+  name: string
+  description: memo
+  attachment_type: small_string
+  content_type: string
+  content: string
+  keywords: string
+  parser: small_string
+

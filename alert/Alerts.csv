@@ -1,0 +1,16 @@
+Scenario,ID,obsolete/alarm_type,name,message,type,range,config
+STOP!,"Changes to this doc can break the nose tests or interfere with test systems!  BEFORE making changes, please read https://confluence.oceanobservatories.org/display/CIDev/Preload+development.  AFTER making changes, please TEST, make a copy of this sheet, and commit the new URL to ion_loader.py!",,,,,,
+DOC,IDs must be unique across ALL scenarios. Scenarios are ignored during preload,,,,,,all other fields for the alert go here
+R2_DEMO,AA1,IntervalAlarmDef,temperature_warning_interval,Temperature is below the normal range of 50.0 and above.,WARNING,50<temp,
+BETA,PREST1,IntervalAlarmDef,temperature_min_alert_interval,PTemp value below 0 C,ALERT,0< pressure_temp,
+BETA,PREST2,IntervalAlarmDef,temperature_max_alert_interval,PTemp value exceeds 30 C,ALERT,pressure_temp<30.0,
+BETA,PREST3,IntervalAlarmDef,pressure_value,Press value < 0.50*depth(deployment) or Press value > 1.50*depthdeployment,ALERT,0< absolute_pressure <100,
+BETA,PREST4,IntervalAlarmDef,pressure_sci_value,Press value < 0.99*depth(deployment) or Press value > 1.01*depthdeployment,WARNING, 45< absolute_pressure <55,
+BETA,CTDBP1,IntervalAlarmDef,salinity_min_max,Salinity reading is > 40 psu or < 20 psu,ALERT,25<salinity<40,
+BETA,CTDBP2,IntervalAlarmDef,temperature_min_max,Temperature reading is < 3 C or > 30C,ALERT,3<temperature<30,
+BETA,CTDBP3,IntervalAlarmDef,conductivity_min_max,Conductivity reading is not between 3 siemans/meter and 6 siemans/meter,ALERT,3<conductivity<30,
+BETAX,CTDBP4,IntervalAlarmDef,density_min_max,Pressure reading is > 5 meters from deployment depth or < 5 meters from deployment depth,ALERT,5<density<5,
+NOSE,NOSE_ALARM,IntervalAlarmDef,test_temp_warning,Temperature is below the normal range of 50.0 and above.,WARNING,50<temp<=100,
+NOSE,NOSE_ALARM2,IntervalAlarmDef,test_density_warning,Temperature is below the normal range of 50.0 and above.,WARNING,density<=10,
+BETA,A_TEMP,,temperature_warning_interval,Temperature is below the normal range of 50.0 and above.,WARNING,50<temp,"stream_name: parsed, aggregate_type: 2, alert_class: IntervalAlert"
+BETA,A_LATE,,late_data_warning,Expected data has not arrived.,WARNING,,"stream_name: parsed, aggregate_type: 1, time_delta: 2, alert_class: LateDataAlert"

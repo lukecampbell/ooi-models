@@ -12,10 +12,7 @@ def connection():
     connection = PSQLConnection(connection_string)
     return connection
 
-def initialize(connection):
-    connection.cursor.execute('DROP VIEW pdict_view')
-    ParameterDictionary.reinitialize(connection)
-    ParameterRelation.reinitialize(connection)
+def initialize_view(connection):
     pdict_view='''CREATE VIEW pdict_view(
         pdict_scenario,
         pdict_id,
@@ -46,6 +43,13 @@ def initialize(connection):
         INNER JOIN ParameterContexts ON ParameterRelations.parameter_id=ParameterContexts.id;
 '''    
     connection.execute(pdict_view)
+
+def drop_view(connection):
+    connection.execute('DROP VIEW pdict_view')
+
+def initialize(connection):
+    ParameterDictionary.reinitialize(connection)
+    ParameterRelation.reinitialize(connection)
 
 def download():
     base_url = 'https://docs.google.com/spreadsheet/pub?key=0AttCeOvLP6XMdG82NHZfSEJJOGdQTkgzb05aRjkzMEE'
