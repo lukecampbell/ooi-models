@@ -1,0 +1,36 @@
+InstrumentModel:
+  scenario: small_string
+  id: small_string*
+  owner_id: small_string
+  org_ids: small_string
+  name: string
+  description: memo
+  reference_urls: memo
+  instrument_family: small_string
+  instrument_classes_supported: string
+  primary_interface: string
+  baud_rate_default: small_string
+  manufacturer: string
+  manufacturer_url: string
+  mixed_sampling_mode: boolean
+  internal_data_storage: boolean
+  integrated_inductive_modem_available: boolean
+  internal_battery: boolean
+  clock_max_drift: integer
+  operational_depth_maximum: integer
+  survival_depth_maximum: integer
+  hotel_current: string
+  electrical_notes: string
+  power_source: string
+  clock_notes: string
+  power_supply_voltage_minimum: string
+  power_supply_voltage_maximum: string
+  weight: string
+  voltage: string
+  wattage: string
+  height: string
+  length: string
+  width: string
+  required_on_time: string
+
+

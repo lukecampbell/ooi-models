@@ -1,0 +1,4 @@
+Scenario,ID,owner_id,lcstate,org_ids,dataset_id,eda/name,eda/description,eda/agent_version,eda/handler_module,eda/handler_class,dataset_model
+STOP!,"Changes to this doc can break the nose tests or interfere with test systems!  BEFORE making changes, please read https://confluence.oceanobservatories.org/display/CIDev/Preload+development.  AFTER making changes, please TEST, make a copy of this sheet, and commit the new URL to ion_loader.py!",,,,,,,,MISNAMED: should be agent_ or driver_module,,
+NOSE,EDA_NOSE_CTD,,,,ED_NOSE_CTD,Test CTD Dataset Agent,,,ion.agents.data.external_dataset_agent,ExternalDatasetAgent,EDM_NOSE_CTD
+NOSE,EDA_NOSE_ACM,,,,ED_NOSE_ACM,Test ACM Dataset Agent,,,ion.agents.data.external_dataset_agent,ExternalDatasetAgent,EDM_NOSE_ACM

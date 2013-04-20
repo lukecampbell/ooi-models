@@ -1,0 +1,9 @@
+DataProductLink:
+  scenario: small_string
+  id: small_string*
+  data_product_id: small_string
+  input_resource_id: small_string
+  source_resource_id: small_string
+  resource_type: small_string
+  comment: memo
+

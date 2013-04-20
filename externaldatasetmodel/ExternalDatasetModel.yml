@@ -1,0 +1,10 @@
+ExternalDatasetModel:
+  scenario: small_string
+  id: small_string*
+  owner_id: small_string
+  lcstate: small_string
+  org_ids: string
+  name: string
+  description: memo
+  dataset_type: string
+

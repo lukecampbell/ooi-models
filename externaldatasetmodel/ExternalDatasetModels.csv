@@ -1,0 +1,4 @@
+Scenario,ID,owner_id,lcstate,org_ids,edm/name,edm/description,edm/dataset_type
+STOP!,"Changes to this doc can break the nose tests or interfere with test systems!  BEFORE making changes, please read https://confluence.oceanobservatories.org/display/CIDev/Preload+development.  AFTER making changes, please TEST, make a copy of this sheet, and commit the new URL to ion_loader.py!",,,,,,
+NOSE,EDM_NOSE_CTD,,,,Test External CTD Dataset Model,,nose_ctd_stream
+NOSE,EDM_NOSE_ACM,,,,Test External ACM Dataset Model,,nose_acm_stream

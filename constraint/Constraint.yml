@@ -11,6 +11,6 @@ Constraint:
   top: double
   bottom: double
   vertical_direction: small_string
-  start: string
-  end: string
+  start_date: string
+  end_date: string
 

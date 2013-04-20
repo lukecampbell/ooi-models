@@ -1,0 +1,11 @@
+CoordinateSystem:
+  scenario: string
+  id: string*
+  owner_id: string
+  confluence: memo
+  geospatial_geodetic_crs: memo
+  geospatial_vertical_crs: memo
+  geospatial_latitude_units: string
+  geospatial_longitude_units: string
+  geospatial_vertical_units: string
+  geospatial_vertical_positive: string

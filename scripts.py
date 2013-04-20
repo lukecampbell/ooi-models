@@ -11,12 +11,52 @@ from stuck_value_test import stuck_value_test
 from trend_test import trend_test
 from attachment import attachment
 from alert import alert
+from constraint import constraint
+from contact import contact
+from externaldataprovider import externaldataprovider
+from deployment import deployment
+from dataproductlink import dataproductlink
+from dataprocessdefinition import dataprocessdefinition
+from coordinatesystem import coordinatesystem
 import sys
 
-download_modules = [data_product,parameter,parameter_dictionary,parameter_function,stream_definition, attachment, alert]
+download_modules = [data_product,
+    parameter,
+    parameter_dictionary,
+    parameter_function,
+    stream_definition,
+    attachment,
+    alert,
+    constraint,
+    contact,
+    externaldataprovider,
+    deployment,
+    dataproductlink,
+    dataprocessdefinition,
+    coordinatesystem,
+    ]
 all_modules = [
-        parameter_dictionary, parameter_function, parameter, stream_definition, data_product, 
-        grt, saf_data_product, saf_instrument, spike_test, stuck_value_test, trend_test, attachment, alert]
+    parameter_dictionary,
+    parameter_function,
+    parameter,
+    stream_definition,
+    data_product,
+    grt,
+    saf_data_product,
+    saf_instrument,
+    spike_test,
+    stuck_value_test,
+    trend_test,
+    attachment,
+    alert,
+    constraint,
+    contact,
+    externaldataprovider,
+    deployment,
+    dataproductlink,
+    dataprocessdefinition,
+    coordinatesystem,
+    ]
 def download_all():
     for module in download_modules:
         print 'Download for ' + module.__name__
@@ -81,6 +121,13 @@ def connection():
 def initialize(connection):
     %(model_name)s.reinitialize(connection)
 
+def download():
+    base_url = 'https://docs.google.com/spreadsheet/pub?key=0AttCeOvLP6XMdG82NHZfSEJJOGdQTkgzb05aRjkzMEE'
+    url = '%%s&single=true&gid=32&output=csv' %% base_url
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(pkg_resources.resource_filename(__name__,'%(model_name)ss.csv'),'w') as f:
+            f.write(response.content)
 
 def base(connection):
     with open(pkg_resources.resource_filename(__name__,'%(model_name)ss.csv')) as f:
@@ -91,6 +138,8 @@ def base(connection):
             if 'void' in row['Scenario'].lower():
                 continue
             if 'stop' in row['Scenario'].lower():
+                continue
+            if not row['Scenario']:
                 continue
             args = dict(
                 id = int(row['ID'][4:]),

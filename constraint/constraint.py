@@ -39,15 +39,15 @@ def base(connection):
                     owner_id=row['owner_id'],
                     confluence=row['confluence'],
                     type=row['type'],
-                    south=row['south'],
-                    north=row['north'],
-                    west=row['west'],
-                    east=row['east'],
-                    top=row['top'],
-                    bottom=row['bottom'],
+                    south=row['south'] or None,
+                    north=row['north'] or None,
+                    west=row['west'] or None,
+                    east=row['east'] or None,
+                    top=row['top'] or None,
+                    bottom=row['bottom'] or None,
                     vertical_direction=row['vertical_direction'],
-                    start=row['start'],
-                    end=row['end'],
+                    start_date=row['start'],
+                    end_date=row['end'],
                 )
             entry = Constraint(**args)
             entry.create(connection)

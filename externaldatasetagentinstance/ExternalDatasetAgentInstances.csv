@@ -1,0 +1,5 @@
+Scenario,Confluence,ID,owner_id,org_ids,name,description,agent,dataset,streamdef,agent_config,driver_config,handler_module,handler_class,parser_module,parser_class
+STOP!,"Changes to this doc can break the nose tests or interfere with test systems!  BEFORE making changes, please read https://confluence.oceanobservatories.org/display/CIDev/Preload+development.  AFTER making changes, please TEST, make a copy of this sheet, and commit the new URL to ion_loader.py!",,,,,,,,,,,,,,
+DOC,,,,,,,ID of ExternalDatasetAgent,ID of ExternalDataset,StreamDefinition ID,additional key/value pairs for agent_config,additonal key/value pairs for stream_config,,,,
+NOSE,,EDAI_NOSE_CTD,,,Test External CTD Agent Instance,,EDA_NOSE_CTD,ED_NOSE_CTD,StreamDef106,key1: value1,"key2: value2, key3: value3",ion.agents.data.handlers.hypm_data_handler,HYPMDataHandler,ion.agents.data.handlers.hypm_data_handler,HYPM_01_WFP_CTDParser
+NOSE,,EDAI_NOSE_ACM,,,Test External ACM Dataset Agent Instance,,EDA_NOSE_ACM,ED_NOSE_ACM,StreamDef106,key1: value1,"key2: value2, key3: value3",ion.agents.data.handlers.hypm_data_handler,HYPMDataHandler,ion.agents.data.handlers.hypm_data_handler,HYPM_01_WFP_ACMParser

@@ -1,0 +1,20 @@
+InstrumentAgentInstance:
+  scenario: small_string*
+  id: small_string*
+  owner_id: small_string
+  org_ids: small_string
+  instrument_agent_id: small_string
+  instrument_device_id: small_string
+  name: string
+  description: memo
+  comms_device_address: string
+  comms_device_port: small_string
+  comms_server_address: string
+  comms_server_port: small_string
+  comms_server_cmd_port: small_string
+  alerts: string
+  startup_config: memo
+  comment: memo
+
+
+

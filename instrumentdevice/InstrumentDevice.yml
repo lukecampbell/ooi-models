@@ -1,0 +1,20 @@
+InstrumentDevice:
+  scenario: small_string
+  id: small_string*
+  confluence: memo
+  owner_id: small_string
+  lcstate: small_string
+  org_ids: string
+  instrument_model_id: small_string
+  platform_device_id: small_string
+  contact_ids: string
+  name: string
+  description: memo
+  serial_number: string
+  firmware_version: string
+  hardware_version: string
+  controllable: string
+  monitorable: string
+  message_controllable: string
+  reference_urls: memo
+
