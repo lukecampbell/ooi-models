@@ -1,5 +1,6 @@
 Scenario,ID,resource_id,file_path,att/name,att/description,att/attachment_type,att/content_type,att/content,att/keywords,parser
 STOP!,"Changes to this doc can break the nose tests or interfere with test systems!  BEFORE making changes, please read https://confluence.oceanobservatories.org/display/CIDev/Preload+development.  AFTER making changes, please TEST, make a copy of this sheet, and commit the new URL to ion_loader.py!",,,,,,,,,
+DOC:CI_Attribute_Name,[Attachment.alt_ids?],Attachment.object_id,[X],Attachment.name,Attachment.description,Attachment.attachment_type,Attachment.content_type,Attachment.content,Attachment.keywords,
 R2_DEMO,ATT1,ID3,att1.pdf,Testpdf,Test of PDF File,BLOB,application/pdf,,,
 R2_DEMO,ATT2,ID3,att2.png,Testpng,Test of PNG file,BLOB,image/png,,['IMAGE'],
 R2_DEMO,ATT3,ID4,att3.csv,Testcsv,Test of CSV file,ASCII,text/csv,,,
