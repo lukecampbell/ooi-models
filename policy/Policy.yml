@@ -1,0 +1,15 @@
+Policy:
+  scenario: small_string
+  id: small_string*
+  confluence: memo
+  owner_id: small_string
+  org_ids: small_string
+  policy_type: small_string
+  name: string
+  description: memo
+  enabled: small_string
+  required: small_string
+  definition: memo
+  policy_rule: memo
+
+

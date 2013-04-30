@@ -1,0 +1,17 @@
+SensorModel:
+  scenario: small_string
+  id: small_string*
+  owner_id: small_string
+  org_ids: small_string
+  name: string
+  description: memo
+  manufacturer: memo
+  manufacturer_url: memo
+  reference_urls: memo
+  weight: string
+  voltage: string
+  wattage: string
+  height: string
+  length: string
+  width: string
+

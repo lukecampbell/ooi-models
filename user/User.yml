@@ -1,0 +1,8 @@
+User:
+  scenario: small_string
+  id: small_string*
+  subject: string
+  name: string
+  description: memo
+  contact_id: small_string
+

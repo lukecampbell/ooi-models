@@ -33,11 +33,11 @@ def base(connection):
                 continue
             if 'void' in row['Scenario'].lower():
                 continue
-            if not row['ID'] or 'PFID' not in row['ID']:
+            if not row['Scenario']:
                 continue
             args = dict(
                 scenario = row['Scenario'],
-                id = int(row['ID'][4:]),
+                id = row['ID'],
                 name = row['Name'],
                 instrument_class = row['Instrument Class'],
                 instrument_series = row['Instrument Series'],

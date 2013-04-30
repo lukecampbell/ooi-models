@@ -1,0 +1,14 @@
+PlatformDevice:
+  scenario: small_string
+  id: small_string*
+  confluence: memo
+  owner_id: small_string
+  lcstate: small_string
+  org_ids: string
+  contact_ids: string
+  platform_model_id: string
+  network_parent_id: small_string
+  name: string
+  description: memo
+  serial_number: string
+

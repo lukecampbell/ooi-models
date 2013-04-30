@@ -1,0 +1,13 @@
+PlatformAgent:
+  scenario: small_string
+  id: small_string*
+  owner_id: small_string
+  lcstate: small_string
+  org_ids: small_string
+  platform_model_ids: small_string
+  name: string
+  description: memo
+  agent_version: string
+  driver_module: string
+  driver_class: string
+  stream_configurations: string

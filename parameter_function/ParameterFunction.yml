@@ -1,6 +1,6 @@
 ParameterFunction:
   scenario: string
-  id: integer*
+  id: small_string*
   name: string
   instrument_class: string
   instrument_series: string

@@ -6,5 +6,12 @@ StreamDefinition:
   name: string
   description: memo
   pdict_name: string
-  available_fields: string
+  available_fields: memo
+  parameter_dictionary: small_string
+  reference_designator: string
+
+StreamDefRelation:
+  stream_def_id: small_string*
+  parameter_id: small_string*
+
 

@@ -65,5 +65,6 @@ TMPSF,LINK61,DPROD81_RAW,ID15,ID15,InstrumentDevice,TMPSF raw
 VEL3D_B,LINK62,DPROD83,ID16,ID16,InstrumentDevice,vel3d sample data
 VEL3D_B,LINK63,DPROD84,ID16,ID16,InstrumentDevice,vel3d engineering data
 VEL3D_B,LINK64,DPROD83_RAW,ID16,ID16,InstrumentDevice,vel3d raw
-LC_TEST,LINK65,DPROD85,ID17,ID17,InstrumentDevice,LC Test Simulator Data
-NOSE,LINK66,DP_TEST_EXT,ED_NOSE,ID_TEST,ExternalDataset,link data product to external dataset
+BETA,LINK65,DPROD85,ID17,ID17,InstrumentDevice,CTD Simulator Data Parsed
+NOSE,LINK66,DP_TEST_EXT,ED_NOSE_CTD,ID_TEST,ExternalDataset,link data product to external dataset
+BETA,LINK67,DPROD91,ID17,ID17,InstrumentDevice,CTD Simulator Data Raw

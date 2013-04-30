@@ -13,4 +13,4 @@ xxx,xxx,USER_1,DEPLOYED_AVAILABLE,MF_3,IM2,SBE37SMP Instrument Omelette,Seabird 
 NOSE,IA1N,USER_1,DEPLOYED_AVAILABLE,MF_3,IM2,Test instrumentAgent,For nose tests,0.5,http://sddevrepo.oceanobservatories.org/releases/seabird_sbe37smb_ooicore-0.0.5-py2.7.egg,,,"SC1,SC2"
 TMPSF,IA11,USER_1,DEPLOYED_AVAILABLE,MF_3,IM11,TMPSF agent,TMPSF,0.2,http://sddevrepo.oceanobservatories.org/releases/rbr_xr_420_thermistor_24_ooicore-0.0.2-py2.7.egg,,,"SC1,SC81,SC82"
 VEL3D_B,IA12,USER_1,DEPLOYED_AVAILABLE,MF_3,IM12,VEL3D_B agent,VEL3D,0.1,WAITING FOR STEVE,,,"SC1,SC25,SC26"
-LC_TEST,IA13,USER_1,DEPLOYED_AVAILABLE,MF_3,IM2,SBE37SMP Instrument Agent,Seabird 37 CTD Instrument Agent,0.1,http://sddevrepo.oceanobservatories.org/releases/seabird_sbe37smb_ooicore-0.1.0-py2.7.egg,,,SC83
+BETA,IA13,USER_1,DEPLOYED_AVAILABLE,MF_3,IM2,SBE37SMP Instrument Agent,Seabird 37 CTD Instrument Agent,0.1,http://sddevrepo.oceanobservatories.org/releases/seabird_sbe37smb_ooicore-0.1.1-py2.7.egg,,,"SC84,SC85"

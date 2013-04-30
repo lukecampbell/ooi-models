@@ -1,0 +1,12 @@
+Subsite:
+  scenario: small_string
+  id: small_string*
+  owner_id: small_string
+  org_ids: small_string
+  parent_site_id: small_string
+  name: string
+  local_name: string
+  description: memo
+  reference_designator: small_string
+  constraint_ids: string
+  coordinate_system: small_string

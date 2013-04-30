@@ -41,7 +41,9 @@ def base(connection):
                 name = row['sdef/name'],
                 description = row['sdef/description'],
                 pdict_name=row['param_dict_name'],
-                available_fields=row['available_fields']
+                available_fields=row['available_fields'],
+                parameter_dictionary=row['parameter_dictionary'],
+                reference_designator=row['reference_designator'],
                 )
 
 

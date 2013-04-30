@@ -13,36 +13,30 @@ def connection():
     return connection
 
 def initialize_view(connection):
-    pdict_view='''CREATE VIEW pdict_view(
-        pdict_scenario,
-        pdict_id,
-        pdict_confluence,
-        pdict_name,
-        pdict_parameter_ids,
-        pdict_temporal_parameter,
-        param_scenario,
-        param_confluence,
-        param_name,
-        param_id,
-        param_parameter_type,
-        param_value_encoding,
-        param_code_set,
-        param_uom,
-        param_fill_value,
-        param_parameter_function_id,
-        param_pmap,
-        param_lookup_value,
-        param_qc_functions,
-        param_data_product)
-    AS 
-    SELECT 
-        ParameterDictionaries.*,
-        ParameterContexts.*
-    FROM ParameterRelations 
-        INNER JOIN ParameterDictionaries ON ParameterDictionaries.id=ParameterRelations.pdict_id 
-        INNER JOIN ParameterContexts ON ParameterRelations.parameter_id=ParameterContexts.id;
-'''    
-    connection.execute(pdict_view)
+    view_sql='''CREATE VIEW public.pdict_view
+AS
+SELECT 
+    pdict.scenario as pdict_scenario,
+    pdict.id as pdict_id,
+    pdict.name as pdict_name,
+    pdict.temporal_parameter,
+    param.scenario as param_scenario,
+    param.name as param_name,
+    param.id as param_id,
+    param.parameter_type,
+    param.value_encoding,
+    param.code_set,
+    param.unit_of_measure,
+    param.fill_value,
+    param.parameter_function_id,
+    param.lookup_value,
+    param.qc_functions,
+    param.ooi_short_name
+FROM ParameterRelations as prelat
+    INNER JOIN ParameterDictionaries AS pdict ON pdict.id=prelat.pdict_id
+    INNER JOIN ParameterContexts AS param ON param.id=prelat.parameter_id;
+    '''
+    connection.execute(view_sql);
 
 def drop_view(connection):
     connection.execute('DROP VIEW pdict_view')
@@ -76,7 +70,7 @@ def base(connection):
                 continue
             args = dict(
                     scenario=row['Scenario'],
-                    id=int(row['ID'][4:]),
+                    id=row['ID'],
                     confluence=row['confluence'],
                     name=row['name'],
                     parameter_ids=row['parameter_ids'],
@@ -91,8 +85,8 @@ def base(connection):
             for p_id in p_ids:
                 p_id = p_id.strip()
                 args = dict(
-                        parameter_id=int(p_id[2:]),
-                        pdict_id=int(row['ID'][4:])
+                        parameter_id=p_id,
+                        pdict_id=row['ID'],
                         )
                 relation = ParameterRelation(**args)
                 relation.create(connection)

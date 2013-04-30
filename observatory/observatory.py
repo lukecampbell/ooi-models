@@ -17,7 +17,7 @@ def initialize(connection):
 
 def download():
     base_url = 'https://docs.google.com/spreadsheet/pub?key=0AttCeOvLP6XMdG82NHZfSEJJOGdQTkgzb05aRjkzMEE'
-    url = '%s&single=true&gid=32&output=csv' % base_url
+    url = '%s&single=true&gid=28&output=csv' % base_url
     response = requests.get(url)
     if response.status_code == 200:
         with open(pkg_resources.resource_filename(__name__,'Observatorys.csv'),'w') as f:
@@ -36,7 +36,15 @@ def base(connection):
             if not row['Scenario']:
                 continue
             args = dict(
-                id = int(row['ID'][4:]),
+                    scenario = row['Scenario'],
+                    id = row['ID'],
+                    owner_id = row['owner_id'],
+                    org_ids = row['org_ids'],
+                    name = row['obs/name'],
+                    description = row['obs/description'],
+                    spatial_area_name = row['obs/spatial_area_name'],
+                    constraint_ids = row['constraint_ids'],
+                    coordinate_system = row['coordinate_system'],
                 )
             entry = Observatory(**args)
             entry.create(connection)

@@ -1,61 +1,190 @@
+from alert import alert
+from attachment import attachment
+from constraint import constraint
+from contact import contact
+from coordinatesystem import coordinatesystem
 from data_product import data_product
+from dataprocess import dataprocess
+from dataprocessdefinition import dataprocessdefinition
+from dataproductlink import dataproductlink
+from deployment import deployment
+from externaldataprovider import externaldataprovider
+from externaldataset import externaldataset
+from externaldatasetagent import externaldatasetagent
+from externaldatasetagentinstance import externaldatasetagentinstance
+from externaldatasetmodel import externaldatasetmodel
+from grt import grt
+from instrumentagent import instrumentagent
+from instrumentagentinstance import instrumentagentinstance
+from instrumentdevice import instrumentdevice
+from instrumentmodel import instrumentmodel
+from instrumentsite import instrumentsite
+from observatory import observatory
+from org import org
 from parameter import parameter
 from parameter_dictionary import parameter_dictionary
 from parameter_function import parameter_function
-from stream_definition import stream_definition
-from grt import grt
+from parametercontext import parametercontext
+from parser import parser
+from platformagent import platformagent
+from platformagentinstance import platformagentinstance
+from platformdevice import platformdevice
+from platformmodel import platformmodel
+from platformsite import platformsite
+from policy import policy
 from saf_data_product import saf_data_product
 from saf_instrument import saf_instrument
+from sensordevice import sensordevice
+from sensormodel import sensormodel
 from spike_test import spike_test
+from stream_definition import stream_definition
+from streamconfiguration import streamconfiguration
 from stuck_value_test import stuck_value_test
+from subsite import subsite
+from transformfunction import transformfunction
 from trend_test import trend_test
-from attachment import attachment
-from alert import alert
-from constraint import constraint
-from contact import contact
-from externaldataprovider import externaldataprovider
-from deployment import deployment
-from dataproductlink import dataproductlink
-from dataprocessdefinition import dataprocessdefinition
-from coordinatesystem import coordinatesystem
+from user import user
 import sys
 
+'''
+|+alert/
+|+attachment/
+|+constraint/
+|+contact/
+|+coordinatesystem/
+|+data_product/
+|+dataprocess/
+|+dataprocessdefinition/
+|+dataproductlink/
+|+deployment/
+|+externaldataprovider/
+|+externaldataset/
+|+externaldatasetagent/
+|+externaldatasetagentinstance/
+|+externaldatasetmodel/
+|+grt/
+|+instrumentagent/
+|+instrumentagentinstance/
+|+instrumentdevice/
+|+instrumentmodel/
+|+instrumentsite/
+|+observatory/
+|+org/
+|+parameter/
+|+parameter_dictionary/
+|+parameter_function/
+|+parametercontext/
+|+parser/
+|+platformagent/
+|+platformagentinstance/
+|+platformdevice/
+|+platformmodel/
+|+platformsite/
+|+policy/
+|+saf_data_product/
+|+saf_instrument/
+|+sensordevice/
+|+sensormodel/
+|+spike_test/
+|+stream_definition/
+|+streamconfiguration/
+|+stuck_value_test/
+|+subsite/
+|+transformfunction/
+|+trend_test/
+'''
+
 download_modules = [data_product,
-    parameter,
+    parametercontext,
     parameter_dictionary,
     parameter_function,
     stream_definition,
-    attachment,
     alert,
-    constraint,
-    contact,
-    externaldataprovider,
-    deployment,
-    dataproductlink,
-    dataprocessdefinition,
+    attachment, 
+    constraint, 
+    contact, 
     coordinatesystem,
+    data_product,
+    dataprocess,
+    dataprocessdefinition,
+    dataproductlink,
+    deployment,
+    externaldataprovider,
+    externaldataset,
+    externaldatasetagent,
+    externaldatasetagentinstance,
+    instrumentagent,
+    instrumentagentinstance,
+    instrumentdevice,
+    instrumentmodel,
+    instrumentsite,
+    observatory,
+    org,
+    parameter_dictionary,
+    parameter_function,
+    parametercontext,
+    parser,
+    platformagent,
+    platformagentinstance,
+    platformdevice,
+    platformsite,
+    policy,
+    sensordevice,
+    sensormodel,
+    stream_definition,
+    streamconfiguration,
+    subsite,
+    transformfunction,
+    user,
+    
     ]
 all_modules = [
-    parameter_dictionary,
-    parameter_function,
-    parameter,
-    stream_definition,
-    data_product,
-    grt,
-    saf_data_product,
-    saf_instrument,
-    spike_test,
-    stuck_value_test,
-    trend_test,
-    attachment,
-    alert,
-    constraint,
-    contact,
-    externaldataprovider,
-    deployment,
-    dataproductlink,
-    dataprocessdefinition,
-    coordinatesystem,
+alert,
+attachment,
+constraint,
+contact,
+coordinatesystem,
+data_product,
+dataprocess,
+dataprocessdefinition,
+dataproductlink,
+deployment,
+externaldataprovider,
+externaldataset,
+externaldatasetagent,
+externaldatasetagentinstance,
+externaldatasetmodel,
+grt,
+instrumentagent,
+instrumentagentinstance,
+instrumentdevice,
+instrumentmodel,
+instrumentsite,
+observatory,
+org,
+parameter,
+parameter_dictionary,
+parameter_function,
+parametercontext,
+parser,
+platformagent,
+platformagentinstance,
+platformdevice,
+platformmodel,
+platformsite,
+policy,
+saf_data_product,
+saf_instrument,
+sensordevice,
+sensormodel,
+spike_test,
+stream_definition,
+streamconfiguration,
+stuck_value_test,
+subsite,
+transformfunction,
+trend_test,
+user,
     ]
 def download_all():
     for module in download_modules:
