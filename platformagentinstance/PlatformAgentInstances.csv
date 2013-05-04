@@ -1,6 +1,6 @@
-Scenario,ID,owner_id,org_ids,platform_agent_id,platform_device_id,unused/start_agent,pai/name,pai/description,driver_config,platform_id,agent_device_map,agent_streamconfig_map,alerts
-STOP!,"Changes to this doc can break the nose tests or interfere with test systems!  BEFORE making changes, please read https://confluence.oceanobservatories.org/display/CIDev/Preload+development.  AFTER making changes, please TEST, make a copy of this sheet, and commit the new URL to ion_loader.py!",,,,,,,,,,,,
-DOC,,,,,,only base node in topology should start,,,,"if using the simulator, this MUST be a value defined in the simulator configuration network.yml",don't need -- already have platform_device_id in colF for each platform_id,define from streamdef and parameter dictionary L360,simple_dict
+Scenario,ID,owner_id,org_ids,platform_agent_id,platform_device_id,unused/start_agent,pai/name,pai/description,driver_config,platform_id,agent_device_map,agent_streamconfig_map,alerts,publish_rate
+STOP!,"Changes to this doc can break the nose tests or interfere with test systems!  BEFORE making changes, please read https://confluence.oceanobservatories.org/display/CIDev/Preload+development.  AFTER making changes, please TEST, make a copy of this sheet, and commit the new URL to ion_loader.py!",,,,,,,,,,,,,
+DOC,,,,,,only base node in topology should start,,,,"if using the simulator, this MUST be a value defined in the simulator configuration network.yml",don't need -- already have platform_device_id in colF for each platform_id,define from streamdef and parameter dictionary L360,references a list of Alerts sheet ids,"publishing rate (aparam_pubrate_config) for the agent, zero means publish every granule as it arrives"
 BETA,PAI5,USER_1,MF_3,PA1,PDEV3,TRUE,Platform Agent,RSN Platform Agent Instance,"oms_uri: embsimulator,
 attributes.MVPC_pressure_1.read_write: read,
 attributes.MVPC_pressure_1.group: pressure,
@@ -41,7 +41,7 @@ attributes.input_voltage.type: float,
 ports.LJ01D_port_1.port_id: LJ01D_port_1,
 ports.LJ01D_port_1.network: LJ01D_port_1_IP,
 ports.LJ01D_port_2.port_id: LJ01D_port_2,
-ports.LJ01D_port_2.network: LJ01D_port_2_IP,",LJ01D,,,
+ports.LJ01D_port_2.network: LJ01D_port_2_IP,",LJ01D,,,A_LATE,0
 NOSE,PAI_TEST,USER_1,MF_TEST,PA_TEST,PDEV_NOSE,TRUE,Unit Test Platform Agent Instance,RSN Platform Agent Instance,"oms_uri: embsimulator,
 attributes.MVPC_pressure_1.read_write: read,
 attributes.MVPC_pressure_1.group: pressure,
@@ -82,16 +82,4 @@ attributes.input_voltage.type: float,
 ports.LJ01D_port_1.port_id: LJ01D_port_1,
 ports.LJ01D_port_1.network: LJ01D_port_1_IP,
 ports.LJ01D_port_2.port_id: LJ01D_port_2,
-ports.LJ01D_port_2.network: LJ01D_port_2_IP,",LJ01D,,,"name: temperature_warning_interval,
-stream_name: parsed,
-message: Temperature is below the normal range of 50.0 and above.,
-alert_type: WARNING,
-value_id: temp,
-resource_id: instDevice_id,
-origin_type: device,
-lower_bound: 50.0,
-lower_rel_op: <,
-alert_class: IntervalAlert,
-complex.entry: foo,
-
-"
+ports.LJ01D_port_2.network: LJ01D_port_2_IP,",LJ01D,,,A_LATE,0

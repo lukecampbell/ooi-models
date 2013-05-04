@@ -228,7 +228,23 @@ def main():
         if sys.argv[1]=='-n':
             model_name = sys.argv[2]
             new_model(model_name)
-        return
+            return
+
+        if sys.argv[1] == '-r':
+            model_name = sys.argv[2]
+            lc_name = model_name.lower()
+            module = __import__('%s.%s' % (lc_name,lc_name), fromlist=[''])
+            if hasattr(module,'download'):
+                print 'Downloading ', model_name
+                module.download()
+            conn = module.connection()
+            print 'Initializing ', model_name
+            module.initialize(conn)
+            print 'Basing ', model_name
+            module.base(conn)
+            return
+
+
     
 
 

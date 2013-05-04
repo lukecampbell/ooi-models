@@ -29,8 +29,6 @@ def base(connection):
         for row in dr:
             if 'doc' in row['Scenario'].lower():
                 continue
-            if 'void' in row['Scenario'].lower():
-                continue
             if 'stop' in row['Scenario'].lower():
                 continue
             if not row['Scenario']:
@@ -63,7 +61,10 @@ def base(connection):
             try:
                 entry.create(connection)
             except:
+                from traceback import print_exc
+                print 'Failed to insert: '
                 print row
-                raise
+                print_exc()
+                connection.rollback()
 
 

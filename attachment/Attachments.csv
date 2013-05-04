@@ -34,3 +34,4 @@ VOID,ATT29,DPROD85,lc_test_global_range.csv,lc_test_global_range,Global Range Te
 BETA,ATT30,DPROD85,Data_QC_Lookup_Table_Global_Range_Test_2013-2-21.csv,Data_QC_Lookup_Table_Global_Range_Test_2013-2-21,Data QC Lookup Table Global Range Test,REFERENCE,text/csv,,,PARSE1
 BETA,ATT31,DPROD85,Data_QC_Lookup_Table_spike_test_updated.csv,Data_QC_Lookup_Table_spike_test_updated,Data QC Lookup Table Spike Test,REFERENCE,text/csv,,,PARSE4
 BETA,ATT32,DPROD85,Data_QC_Lookup_Table_Stuck_Value_Test.csv,Data_QC_Lookup_Table_Stuck_Value_Test,Data QC Lookup Table Stuck Value Test,REFERENCE,text/csv,,,PARSE2
+BETA,ATT33,DPROD85,Data_QC_Lookup_Table_Trend_Test.csv,Data_QC_Lookup_Table_Trend_Test,Data QC Lookup Table Trend Test,REFERENCE,text/csv,,,PARSE5

@@ -98,7 +98,7 @@ VOID,TRHPH,BatteryVoltage,PD72,0,BatteryVoltage_quantity_float32_V,0,quantity,fl
 BETA,,sample_number,PD73,0,sample_number_quantity_int32_count,0,quantity,int32,,count,-9999, sample number = xxxxxxxx,0,,,,,,,,,,,,
 BETA,,sample_type,PD74,0,sample_type_array_quantity_str_1,0,array<quantity>,str,,1,empty,should always be pressure,0,,,,,,,,,,,,
 BF_DEMO,,InstTime,PD75,0,InstTime_array_quantity_str_1,0,array<quantity>,str,,1,empty," Time (Moored mode MM only) seconds since January 1, 2000 = ssssssss",0,,,,,,,,,,,,
-VOID,,VOIDpressure_temp,PD29,1,VOIDpressure_temp_quantity_float32_deg_C,0,quantity,float32,,deg_C,-9999, pressure sensor temperature(C) = cccc.ccc,,,,,,,temp_p,,Temperature at the pressure sensor (inside housing),,,Pressure sensor temperature,
+VOID,,VOIDpressure_temp,PD29,1,VOIDpressure_temp_quantity_float32_deg_C,0,quantity,float32,,deg_C,-9999, pressure sensor temperature(C) = cccc.ccc,,,,,,,temp_p,,Temperature at the pressure sensor (inside housing),,,Pressure sensor temperature,Duplicate Keys
 BF_DEMO,,timestamp,PD77,0,timestamp_array_quantity_str_1,0,array<quantity>,str,,1,empty,timestamp,0,,,,,,,,,,,timestamp,
 BF_DEMO,,error,PD78,0,error_quantity_int32_C,0,quantity,int32,,C,-9999,error code,0,,,,,,,,,,,error code,
 BF_DEMO,,analog1,PD79,0,analog1_quantity_int32_C,0,quantity,int32,,C,-9999,analog input 1,0,,,,,,,,,,,analog input 1,
