@@ -1,7 +1,6 @@
 Constraint:
   scenario: string
   id: small_string*
-  owner_id: small_string
   confluence: memo
   type: small_string
   south: double

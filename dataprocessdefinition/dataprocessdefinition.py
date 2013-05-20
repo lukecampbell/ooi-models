@@ -48,6 +48,10 @@ def base(connection):
                     class_name = row['dpd/class_name'],
                 )
             entry = DataProcessDefinition(**args)
-            entry.create(connection)
+            try:
+                entry.create(connection)
+            except Exception as e:
+                connection.rollback()
+                print e.message
 
 

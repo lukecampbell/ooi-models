@@ -13,7 +13,7 @@ IDK,IDK_USER1,,Primary,Developer,IDK,Illustrious Test Passagist,tester@somewhere
 IDK,IDK_USER2,,Secondary,Developer,IDK,Illustrious Test Passagist,tester@somewhere.com,www.reddit.com,Box 357940,Shantytown,92037,CA,USA,858-555-5555,alternate
 BETA,A_PLUEDDEMANN,,Al,Plueddemann,WHOI,scientist,aplueddemann@whoi.edu,,,,,MA,USA,,primary
 BETA,B_BERGEN,,Bill,Bergen,Ocean Leadership,lacky,billbergen16@gmail.com,,,,,CO,USA,,primary
-BETA,B_PRITCHETT,,Bill,Pritchett,Ocean Leadership,Sr. Project Manager,wpritchett@oceanleadership.org,,"1201 New York Ave, NW",Washington,20005,DC,USA,2027871611,primary
+VOID,B_PRITCHETT,,Bill,Pritchett,Ocean Leadership,Sr. Project Manager,wpritchett@oceanleadership.org,,"1201 New York Ave, NW",Washington,20005,DC,USA,2027871611,primary
 BETA,C_RISEN,,Craig,Risien,Oregon State University,Senior Faculty Research Assistant,crisien@coas.oregonstate.edu,,104 CEOAS Administration Building,Corvallis,97331,OR,USA,541-737-9682,primary
 BETA,D_MANALANG,,Dana,Manalang,University of Washington,,danam@apl.washington.edu,,,,,WA,USA,,primary
 BETA,G_PROSKUROWSKI,,GIORA,PROSKUROWSKI,University of Washington,RSN-OOI Project Scientist,giora@uw.edu,,UW School of Oceanography Box 357940,Seattle,98195,WA,USA,,primary
@@ -21,5 +21,10 @@ BETA,J_LUND,,John,Lund,WHOI,Engineer II,jlund@whoi.edu,,,,,MA,USA,508.289.3636,p
 BETA,K_STIFFEL,,Kurt,Stiffel,WHOI-OOI,Instrument Lead,Kurt_Stiffel@raytheon.com,,,,,MA,USA,508-289-3920,primary
 BETA,L_MORGAN,,Lynn,Morgan,OSU-OOI,,lmorgan@coas.oregonstate.edu,,,,,OR,USA,,primary
 BETA,M_VARDARO,,Michael,Vardaro,Oregon State University,,mvardaro@coas.oregonstate.edu,,,,,OR,USA,,primary
-BETA,O_ KAWKA,,Orest,Kawka,"Regional Scale Nodes, OOI (University of Washington)",Project Scientist,kawkaoe@uw.edu,,"School of Oceanography, Box 357940",Seattle,98195,OR,USA,2062216411,primary
+BETA,O_KAWKA,,Orest,Kawka,"Regional Scale Nodes, OOI (University of Washington)",Project Scientist,kawkaoe@uw.edu,,"School of Oceanography, Box 357940",Seattle,98195,OR,USA,2062216411,primary
 BETA,K_FELDMAN,,Ken,Feldman,RSN,,ksf1@uw.edu,,,,,,,,primary
+BETA,M_LOCKER,,Martin,Locker,CI,Designer,mlocker@rocketmail.com,,,,,,,,primary
+BETA,C_LICHTENWALNER,,Sage,Lichtenwalner,Rutgers University,Research Programmer,sage@marine.rutgers.edu,,,,,,,848-932-3291,primary
+BETA,G_CHAVEZ,,Gabriela,Chavez,CGSN/Scripps Institution of Oceanography,Operations Manager,gchavez@ucsd.edu,,,,,,,8588224938,primary
+BETA,J_COSGROVE,,John,Cosgrove,Woods Hole Oceanographic (Raytheon),OOI OMC admin,jcosgrove@whoi.edu,,,Falmouth,,,USA,5082894904,primary
+OOIR2,B_COLLIER,,Bob,Collier,Oregon State University,Principal Investigator,rcollier@coas.oregonstate.edu,,"College of Earth Ocean and Atmospheric Sciences, Oregon State U.",Corvallis,97331-5503,OR,USA,541-737-4367,primary

@@ -50,6 +50,10 @@ def base(connection):
                     policy_rule = row['policy_rule'].replace('%s','%%s'),
                 )
             entry = Policy(**args)
-            entry.create(connection)
+            try:
+                entry.create(connection)
+            except Exception as e:
+                connection.rollback()
+                print e.message
 
 

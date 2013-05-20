@@ -36,7 +36,6 @@ def base(connection):
             args = dict(
                     scenario=row['Scenario'],
                     id=row['ID'],
-                    owner_id=row['owner_id'],
                     confluence=row['confluence'],
                     type=row['type'],
                     south=row['south'] or None,

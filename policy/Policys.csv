@@ -22,3 +22,24 @@ XXX,POLICY01,,USER_1,MF_3,ResourceAccessPolicy,Owner only,"Access is allowed by 
 
 
         </Rule>",,,
+HENRIE,POLICY01,,,,CommonServiceAccessPolicy,ION_Manager_Permit_Everything,A global policy rule that permits access to everything with the ION Manager role,TRUE,TRUE,,"        <Rule RuleId=""%s:"" Effect=""Permit"">
+            <Description>
+                %s
+            </Description>
+
+
+        <Target>
+            <Subjects>
+                <Subject>
+                    <SubjectMatch MatchId=""urn:oasis:names:tc:xacml:1.0:function:string-equal"">
+                        <AttributeValue DataType=""http://www.w3.org/2001/XMLSchema#string"">ION_MANAGER</AttributeValue>
+                        <SubjectAttributeDesignator
+                             AttributeId=""urn:oasis:names:tc:xacml:1.0:subject:subject-role-id""
+                             DataType=""http://www.w3.org/2001/XMLSchema#string""/>
+                    </SubjectMatch>
+                </Subject>
+            </Subjects>
+        </Target>
+
+
+        </Rule>",,,

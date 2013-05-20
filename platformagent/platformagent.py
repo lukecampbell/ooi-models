@@ -50,6 +50,10 @@ def base(connection):
                     stream_configurations = row['stream_configurations'],
                 )
             entry = PlatformAgent(**args)
-            entry.create(connection)
+            try:
+                entry.create(connection)
+            except Exception as e:
+                connection.rollback()
+                print e.message
 
 

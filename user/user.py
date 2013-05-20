@@ -44,6 +44,10 @@ def base(connection):
                     contact_id = row['contact_id'],
                 )
             entry = User(**args)
-            entry.create(connection)
+            try:
+                entry.create(connection)
+            except Exception as e:
+                connection.rollback()
+                print e.message
 
 

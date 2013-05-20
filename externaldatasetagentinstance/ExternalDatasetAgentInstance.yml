@@ -7,12 +7,10 @@ ExternalDatasetAgentInstance:
   name: string
   description: memo
   agent: small_string
-  dataset: small_string
+  source: small_string
   streamdef: small_string
   agent_config: memo
   driver_config: memo
-  handler_module: memo
-  handler_class: string
   parser_module: memo
   parser_class: string
 

@@ -46,6 +46,11 @@ def base(connection):
                     dataset_type = row['edm/dataset_type'],
                 )
             entry = ExternalDatasetModel(**args)
-            entry.create(connection)
+            try:
+                entry.create(connection)
+            except Exception as e:
+                print e
+                connection.rollback()
+                continue
 
 

@@ -48,6 +48,10 @@ def base(connection):
                     org_url = row['org/url'],
                 )
             entry = Org(**args)
-            entry.create(connection)
+            try:
+                entry.create(connection)
+            except Exception as e:
+                connection.rollback()
+                print e.message
 
 

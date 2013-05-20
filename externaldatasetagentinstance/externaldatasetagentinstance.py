@@ -44,16 +44,21 @@ def base(connection):
                     name = row['name'],
                     description = row['description'],
                     agent = row['agent'],
-                    dataset = row['dataset'],
+                    source = row['source'],
                     streamdef = row['streamdef'],
                     agent_config = row['agent_config'],
                     driver_config = row['driver_config'],
-                    handler_module = row['handler_module'],
-                    handler_class = row['handler_class'],
+                    #handler_module = row['handler_module'],
+                    #handler_class = row['handler_class'],
                     parser_module = row['parser_module'],
                     parser_class = row['parser_class'],
                 )
             entry = ExternalDatasetAgentInstance(**args)
-            entry.create(connection)
+            try:
+                entry.create(connection)
+            except Exception as e:
+                print e
+                connection.rollback()
+                continue
 
 

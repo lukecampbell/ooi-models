@@ -45,6 +45,9 @@ def base(connection):
                     comment = row['comment'],
                 )
             entry = DataProductLink(**args)
-            entry.create(connection)
+            try:
+                entry.create(connection)
+            except Exception as e:
+                print e.message
 
 

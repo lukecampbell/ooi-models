@@ -41,15 +41,20 @@ def base(connection):
                     owner_id = row['owner_id'],
                     lcstate = row['lcstate'],
                     org_ids = row['org_ids'],
-                    dataset_id = row['dataset_id'],
+                    #dataset_id = row['dataset_id'],
                     name = row['eda/name'],
                     description = row['eda/description'],
                     agent_version = row['eda/agent_version'],
-                    handler_module = row['eda/handler_module'],
-                    handler_class = row['eda/handler_class'],
-                    dataset_model = row['dataset_model'],
+                    #handler_module = row['eda/handler_module'],
+                    #handler_class = row['eda/handler_class'],
+                    #dataset_model = row['dataset_model'],
                 )
             entry = ExternalDatasetAgent(**args)
-            entry.create(connection)
+            try:
+                entry.create(connection)
+            except Exception as e:
+                print e
+                connection.rollback()
+                continue
 
 
