@@ -1,0 +1,18 @@
+gradienttest:
+  instrument_array: string
+  instrument_class: string
+  reference_designator: string*
+  dat: string*
+  x: string
+  dat_units: string
+  x_units: string
+  ddatdx: double
+  mindx: double
+  startdat: double
+  toldat: double
+
+
+
+
+
+

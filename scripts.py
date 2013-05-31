@@ -43,6 +43,7 @@ from stuck_value_test import stuck_value_test
 from subsite import subsite
 from transformfunction import transformfunction
 from trend_test import trend_test
+from gradienttest import gradienttest
 from user import user
 import sys
 
@@ -183,6 +184,7 @@ streamconfiguration,
 stuck_value_test,
 subsite,
 transformfunction,
+gradienttest,
 trend_test,
 user,
     ]

@@ -29,6 +29,7 @@ SELECT
     param.unit_of_measure,
     param.fill_value,
     param.parameter_function_id,
+    param.param_map,
     param.lookup_value,
     param.qc_functions,
     param.ooi_short_name
