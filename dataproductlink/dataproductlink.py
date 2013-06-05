@@ -49,5 +49,6 @@ def base(connection):
                 entry.create(connection)
             except Exception as e:
                 print e.message
+                connection.rollback()
 
 

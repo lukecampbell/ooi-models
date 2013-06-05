@@ -222,7 +222,7 @@ def new_model(model_name):
 
 def main():
     if not len(sys.argv) >1:
-        download_all()
+        #download_all()
         initialize_all()
         print 'All models initialized.'
         return

@@ -2,9 +2,12 @@ Scenario,ID,owner_id,org_ids,obs/name,obs/local_name,obs/description,obs/referen
 STOP!,"Changes to this doc can break the nose tests or interfere with test systems!  BEFORE making changes, please read https://confluence.oceanobservatories.org/display/CIDev/Preload+development.  AFTER making changes, please TEST, make a copy of this sheet, and commit the new URL to ion_loader.py!",,,,,,,,,
 DOC,,,,,,,,,list of IDs,
 IDK,IDK_OBS,IDK_USER,IDK_ORG,IDK Observatory,IDK Observatory,"Your desk, your office",XX01ABCD,,"GEO_IDK,TEMP_IDK",SUBMERGED1
-OOIR2_X,OBS_BTST_RSN,,MF_RSN,RSN Bench Testing,,Bench testing of RSN instruments,,Bench Testing,"GEO10,TEMP1",SUBMERGED
-OOIR2_X,OBS_BTST_CG,,MF_CGSN,CG Bench Testing,,Bench testing of CG instruments,,Bench Testing,"GEO11,TEMP1",SUBMERGED
-OOIR2_X,OBS_BTST_EA,,MF_EA,EA Bench Testing,,Bench testing of EA instruments,,Bench Testing,"GEO12,TEMP1",SUBMERGED
+OOIR2_Xx,OBS_BTST_RSN,,MF_RSN,RSN Bench Testing,,Bench testing of RSN instruments,,Bench Testing,"GEO_10,TEMP1",SUBMERGED
+OOIR2_Xx,OBS_BTST_CG,,MF_CGSN,CG Bench Testing,,Bench testing of CG instruments,,Bench Testing,"GEO_11,TEMP1",SUBMERGED
+OOIR2_Xx,OBS_BTST_EA,,MF_EA,EA Bench Testing,,Bench testing of EA instruments,,Bench Testing,"GEO_12,TEMP1",SUBMERGED
+OOIR2_X,OBS_BTST_RSN,,MF_3,RSN Bench Testing,,Bench testing of RSN instruments,,Bench Testing,"GEO_10,TEMP1",SUBMERGED
+OOIR2_X,OBS_BTST_CG,,MF_3,CG Bench Testing,,Bench testing of CG instruments,,Bench Testing,"GEO_11,TEMP1",SUBMERGED
+OOIR2_X,OBS_BTST_EA,,MF_3,EA Bench Testing,,Bench testing of EA instruments,,Bench Testing,"GEO_12,TEMP1",SUBMERGED
 BETA,OBS_RSN,USER_1,MF_3,Beta Demo Site Alpha,Site Alpha,Regional Cable Demonstration Site,XX01ABCD,Beta Regional  Demonstration,"GEO1,TEMP1",SUBMERGED
 BETA,OBS_RSN2,USER_1,MF_3,Beta Demo Site Beta,Site Beta,Regional Cable Demonstration Site,XX01ABCD,Beta Regional  Demonstration,"GEO2,TEMP1",SUBMERGED
 BETA,OBS_RSN3,USER_1,MF_3,Beta Demo Site Gamma,Site Gamma,Regional Cable Demonstration Site,XX01ABCD,Beta Regional  Demonstration,"GEO3,TEMP1",SUBMERGED

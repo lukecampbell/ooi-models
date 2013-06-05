@@ -1,7 +1,7 @@
 Scenario,ID,owner_id,org_ids,input_stream_defs,output_stream_defs,dpd/name,dpd/description,dpd/module,dpd/class_name,dpd/parameters
 STOP!,"Changes to this doc can break the nose tests or interfere with test systems!  BEFORE making changes, please read https://confluence.oceanobservatories.org/display/CIDev/Preload+development.  AFTER making changes, please TEST, make a copy of this sheet, and commit the new URL to ion_loader.py!",,,,,,,,,
-OOIR2_X,DPD15,USER_1,MF_3,StreamDef12,{'google_dt':'StreamDef21'},GOOGLE_DT,Google datatable components,ion.processes.data.transforms.viz.google_dt,VizTransformGoogleDT,
-OOIR2_X,DPD16,USER_1,MF_3,StreamDef12,{'graph':'StreamDef22'},MPL_IMAGES,Matplotlib graphs,ion.processes.data.transforms.viz.matplotlib_graphs,VizTransformMatplotlibGraphs,
+OOIR2,DPD15,,"MF_RSN,MF_CGSN,MF_EA",StreamDef12a,{'google_dt':'StreamDef21a'},GOOGLE_DT,Google datatable components,ion.processes.data.transforms.viz.google_dt,VizTransformGoogleDT,
+OOIR2,DPD16,,"MF_RSN,MF_CGSN,MF_EA",StreamDef12a,{'graph':'StreamDef22a'},MPL_IMAGES,Matplotlib graphs,ion.processes.data.transforms.viz.matplotlib_graphs,VizTransformMatplotlibGraphs,
 BETA,DPD1,USER_1,MF_3,StreamDef12,"{'conductivity':'StreamDef13','temperature':'StreamDef14','pressure':'StreamDef15'}",CTD_L0 demo,L0 - Conductivity/Temp/Pressure,ion.processes.data.transforms.ctd.ctd_L0_all,ctd_L0_all,
 BETA,DPD2,USER_1,MF_3,StreamDef13,{'conductivity':'StreamDef16'},CONDWAT L1 demo,L1 - Conductivity,ion.processes.data.transforms.ctd.ctd_L1_conductivity,CTDL1ConductivityTransform,
 BETA,DPD3,USER_1,MF_3,StreamDef14,{'temperature':'StreamDef17'},TEMPWAT L1 demo,L1 - Temperature,ion.processes.data.transforms.ctd.ctd_L1_temperature,CTDL1TemperatureTransform,

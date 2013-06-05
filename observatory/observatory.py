@@ -47,6 +47,10 @@ def base(connection):
                     coordinate_system = row['coordinate_system'],
                 )
             entry = Observatory(**args)
-            entry.create(connection)
+            try:
+                entry.create(connection)
+            except Exception as e:
+                print e.message
+                connection.rollback()
 
 

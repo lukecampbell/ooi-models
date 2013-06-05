@@ -50,7 +50,11 @@ def base(connection):
 
 
             entry = StreamDefinition(**args)
-            entry.create(connection)
+            try:
+                entry.create(connection)
+            except Exception as e:
+                print e.message
+                connection.rollback()
 
 
 

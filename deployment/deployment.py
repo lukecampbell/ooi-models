@@ -58,6 +58,10 @@ def base(connection):
 
                 )
             entry = Deployment(**args)
-            entry.create(connection)
+            try:
+                entry.create(connection)
+            except Exception as e:
+                print e.message
+                connection.rollback()
 
 

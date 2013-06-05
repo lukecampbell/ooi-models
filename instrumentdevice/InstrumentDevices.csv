@@ -1,8 +1,12 @@
 Scenario,ID,confluence,owner_id,lcstate,org_ids,instrument_model_id,platform_device_id,contact_ids,id/name,id/description,id/serial_number,id/firmware_version,id/hardware_version,id/controllable,id/monitorable,id/message_controllable,id/reference_urls
 STOP!,"Changes to this doc can break the nose tests or interfere with test systems!  BEFORE making changes, please read https://confluence.oceanobservatories.org/display/CIDev/Preload+development.  AFTER making changes, please TEST, make a copy of this sheet, and commit the new URL to ion_loader.py!",,,,,,,,,,,,,,,,
 DOC:CI_Attribute_Name,x,x,[used to create Contact object],lcstate,[relationship],[relationship],[relationship],[used to create Contact object],[name; but naming protocol may change],description,serial_number,firmware_version,hardware_version,controllable,NEED TO DELETE THIS FIELD,NEED TO DELETE THIS FIELD,reference_urls
-OOIR2_X,ID_BTST_CTDSIM1,,,DEVELOPED_AVAILABLE,MF_3,CTDBPO,,,SBE37SMP,SeaBird 37 SMP CTD for R2 Beta Testing,10003,0-00,0-00,TRUE,TRUE,TRUE,
-OOIR2_X,ID_BTST_CTDSIM2,,,DEPLOYED_AVAILABLE,MF_3,CTDBPO,,,SBE Simulator,SBE Sine-wave signal generator,10004,0-00,0-00,TRUE,TRUE,TRUE,
+OOIR2_X,ID_BTST_SBE37,,,DEVELOPED_AVAILABLE,MF_3,IM_SBE37,PD_BTST_RSN1,"M_MANAGER,O_OWNERREP",SBE37SMP,SeaBird 37 SMP CTD,10003,0-00,0-00,TRUE,TRUE,TRUE,
+OOIR2_X,ID_BTST_CTDSIM0,,USER_1,DEVELOPED_AVAILABLE,MF_3,CTDBPO,PD_BTST_RSN1,"M_MANAGER,O_OWNERREP",CTD Simulator,Simulator providing CTD data,10003,0-00,0-00,TRUE,TRUE,TRUE,
+OOIR2_X,ID_BTST_CTDSIM1,,USER_1,DEVELOPED_AVAILABLE,MF_3,CTDBPO,PD_BTST_RSN1,"M_MANAGER,O_OWNERREP",CTD Simulator 1 Demo,Simulator 1 providing CTD data in the R2 Demonstration,10003,0-00,0-00,TRUE,TRUE,TRUE,
+OOIR2_X,ID_BTST_CTDSIM2,,USER_1,DEPLOYED_AVAILABLE,MF_3,CTDBPO,PD_BTST_RSN1,"M_MANAGER,O_OWNERREP",CTD Simulator 2 Demo,Simulator 2 replacement for 1 providing CTD data in the R2 Demonstration,10004,0-00,0-00,TRUE,TRUE,TRUE,
+OOIR2_X,ID_BTST_CGCTD1,,USER_1,DEPLOYED_AVAILABLE,MF_3,CTDMOG,PD_BTST_CG2,"M_MANAGER,O_OWNERREP",CG CTD Demo 1,CTD assembled into CG platform,10004,0-00,0-00,TRUE,TRUE,TRUE,
+OOIR2_X,ID_BTST_CGCTD2,,USER_1,DEPLOYED_AVAILABLE,MF_3,CTDMOG,PD_BTST_CG2,"M_MANAGER,O_OWNERREP",CG CTD Demo 1,CTD assembled into CG platform,10004,0-00,0-00,TRUE,TRUE,TRUE,
 IDK,IDK_DEVICE,,IDK_USER,DEPLOYED_AVAILABLE,IDK_ORG,IDK_MODEL,IDK_PD,"IDK_USER1,IDK_USER2",IDK Test Device,Device currently under IDK testing and driver development,10003,0-00,0-00,TRUE,TRUE,TRUE,
 NOSE,ID_TEST,,USER_1,DEPLOYED_AVAILABLE,MF_TEST,IM2,PDEV3,"TEST_USER,O_OWNERREP",Unit Test SMB37,SeaBird 37 SMP CTD for code unit tests,10003,0-00,0-00,TRUE,TRUE,TRUE,
 BETA,ID12,,USER_1,DEVELOPED_AVAILABLE,MF_3,IM2,PDEV3,"M_MANAGER,O_OWNERREP",SBE37SMP,SeaBird 37 SMP CTD for R2 Beta Testing,10003,0-00,0-00,TRUE,TRUE,TRUE,
@@ -27,3 +31,4 @@ PREST,ID9,,USER_1,DEVELOPED_AVAILABLE,MF_3,IM8,PDEV3,"M_MANAGER,O_OWNERREP",PRES
 TMPSF,ID15,,USER_1,DEVELOPED_AVAILABLE,MF_3,IM11,PDEV3,"M_MANAGER,O_OWNERREP",TMPSF,Sample TMPSF device,10003,0-00,0-00,TRUE,TRUE,TRUE,
 VEL3D_B,ID16,,USER_1,DEVELOPED_AVAILABLE,MF_3,IM12,PDEV3,"M_MANAGER,O_OWNERREP",VEL3D_B,Sample VEL3D_B device,10003,0-00,0-00,TRUE,TRUE,TRUE,
 JN,ID18,,USER_1,DEVELOPED_AVAILABLE,MF_3,IM2,PDEV3,"T_AMPE,J_ORCUTT",CTD Simulator for derived parameters,Simulator 1 providing CTD data for derived parameters,10003,0-00,0-00,TRUE,TRUE,TRUE,
+OPTAA,ID19,,USER_1,DEVELOPED_AVAILABLE,MF_3,IM13,PDEV3,"M_MANAGER,O_OWNERREP",OPTAA,Optical Attenuation and Absorption Instrument,10004,0-00,0-00,TRUE,TRUE,TRUE,http://www.wetlabs.com/

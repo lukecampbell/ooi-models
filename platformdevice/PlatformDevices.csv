@@ -2,6 +2,9 @@ Scenario,ID,confluence,owner_id,lcstate,org_ids,contact_ids,platform_model_id,ne
 STOP!,"Changes to this doc can break the nose tests or interfere with test systems!  BEFORE making changes, please read https://confluence.oceanobservatories.org/display/CIDev/Preload+development.  AFTER making changes, please TEST, make a copy of this sheet, and commit the new URL to ion_loader.py!",,,,,,,,,,,
 DOC: CI attribute name,[X],[X],"[contacts, with role set to owner]",PlatformDevice.lcstate,[X],"[contacts, with role set to pointOfContact]",[association],[association],(optional) association to assembly parent TBD,PlatformDevice.name,PlatformDevice.description,PlatformDevice.serial_number
 IDK,IDK_PD,,IDK_USER,DEPLOYED_AVAILABLE,IDK_ORG,"IDK_USER1,IDK_USER2",IDK_PM,,,IDK platform device,Platform device for IDK development,104
+OOIR2_X,PD_BTST_RSN1,,,DEPLOYED_AVAILABLE,MF_3,,LJ_PM,,,Low Power JBox - RSN Bench Testing,Low Power JBox - RSN Bench Testing,991
+OOIR2_X,PD_BTST_CG1,,,DEPLOYED_AVAILABLE,MF_3,,FM_PM,,,Low Power Sub-surface Mooring - CG Bench Testing,Low Power Sub-surface Mooring - CG Bench Testing,992
+OOIR2_X,PD_BTST_CG2,,,DEPLOYED_AVAILABLE,MF_3,,FM_PM,,PD_BTST_CG1,Low Power Sub-surface Mooring - CG Bench Testing,Low Power Sub-surface Mooring - CG Bench Testing,992
 NOSE,PDEV_NOSE,,USER_1,DEPLOYED_AVAILABLE,MF_3,"M_MANAGER,O_OWNERREP",PM12,,,Nose testing Platform Device,Beta Demonstration of RSN Platform Device connected to Simulated OMS,103
 BETA,PDEV3,,USER_1,DEPLOYED_AVAILABLE,MF_3,"M_MANAGER,O_OWNERREP",PM12,,,Beta Demonstration Platform Device,Beta Demonstration of RSN Platform Device connected to Simulated OMS,103
 BETA,PDEV5,,USER_1,DEPLOYED_AVAILABLE,MF_3,"M_MANAGER,O_OWNERREP",PM12,,PDEV3,Profiler 200m Platform 104b,200-meter Platform for Shallow Profiler - Platform 104,104

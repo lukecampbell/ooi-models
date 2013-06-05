@@ -7,7 +7,7 @@ Deployment:
   site_id: small_string
   device_id: small_string
   activate: boolean
-  name: small_string
+  name: string
   description: memo
   constraint_ids: string
   coordinate_system: string
