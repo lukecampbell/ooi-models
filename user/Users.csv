@@ -2,9 +2,9 @@ Scenario,ID,subject,name,description,contact_id
 STOP!,"Changes to this doc can break the nose tests or interfere with test systems!  BEFORE making changes, please read https://confluence.oceanobservatories.org/display/CIDev/Preload+development.  AFTER making changes, please TEST, make a copy of this sheet, and commit the new URL to ion_loader.py!",,,,
 IDK,IDK_USER,/DC=org/DC=cilogon/C=US/O=Google/CN=idkuser,IDK User,,IDK_USER1
 OOIR2,T_AMPE,/DC=org/DC=cilogon/C=US/O=Google/CN=Tim Ampe A448,Tim Ampe,CI System Development Manager,T_AMPE
-OOIR2,J_DELANEY,TBD_subject,John Delaney,RSN Principal Investigator,J_DELANEY
-OOIR2,B_WELLER,TBD_subject,Bob Weller,RSN Principal Investigator,B_WELLER
-OOIR2,B_COLLIER,TBD_subject,Bob Collier,RSN Principal Investigator,B_COLLIER
+OOIR2x,J_DELANEY,TBD_subject,John Delaney,RSN Principal Investigator,J_DELANEY
+OOIR2x,B_WELLER,TBD_subject,Bob Weller,RSN Principal Investigator,B_WELLER
+OOIR2x,B_COLLIER,TBD_subject,Bob Collier,RSN Principal Investigator,B_COLLIER
 OOIR2,K_FELDMAN,/DC=org/DC=cilogon/C=US/O=University of Washington/CN=KENNETH S. FELDMAN A6895,Ken Feldman,RSN Facility Manager,K_FELDMAN
 OOIR2,G_CHAVEZ,/DC=org/DC=cilogon/C=US/O=University of California-San Diego/CN=Gabriela Chavez A6985,Gabriela Chavez,CG Facility Manager,G_CHAVEZ
 OOIR2,E_DEVER,TBD_subject,Ed Dever,EA Facility Manager,E_DEVER
@@ -22,9 +22,10 @@ OOIR2,M_VARDARO,/DC=org/DC=cilogon/C=US/O=Google/CN=Michael Vardaro A1745,Mike V
 OOIR2,O_KAWKA,/DC=org/DC=cilogon/C=US/O=University of Washington/CN=OREST E. KAWKA A6894,Orest Kawka,,O_KAWKA
 OOIR2,M_LOCKER,/DC=org/DC=cilogon/C=US/O=Google/CN=Martin Locker A6799,Martin Locker,,M_LOCKER
 OOIR2,C_LICHTENWALNER,"/DC=org/DC=cilogon/C=US/O=Rutgers, The State University of New Jersey/CN=Charles Lichtenwalner A847",Sage Lichtenwalner,,C_LICHTENWALNER
-"BETA,OOIR2_X",USER_1,/DC=org/DC=cilogon/C=US/O=Google/CN=Owen Ownerrep A893,Owen Ownerrep,Demonstration User,O_OWNERREP
-"BETA,OOIR2_X",USER_2,/DC=org/DC=cilogon/C=US/O=Google/CN=Mike Manager A892,Mike Manager,Demonstration User,M_MANAGER
-"BETA,OOIR2_X",USER_4,/DC=org/DC=cilogon/C=US/O=Google/CN=Beta Tester A1730,Beta Operator,Beta Operator Test User,B_OPERATOR
+OOIR2,M_HARRINGTON,/DC=org/DC=cilogon/C=US/O=University of Washington/CN=MICHAEL JOHN HARRINGTON A7071,Mike Harrington,RSN Facility Manager,M_HARRINGTON
+"BETA,OOIR2_DEMO",USER_1,/DC=org/DC=cilogon/C=US/O=Google/CN=Owen Ownerrep A893,Owen Ownerrep,Demonstration User,O_OWNERREP
+"BETA,OOIR2_DEMO",USER_2,/DC=org/DC=cilogon/C=US/O=Google/CN=Mike Manager A892,Mike Manager,Demonstration User,M_MANAGER
+"BETA,OOIR2_DEMO",USER_4,/DC=org/DC=cilogon/C=US/O=Google/CN=Beta Tester A1730,Beta Operator,Beta Operator Test User,B_OPERATOR
 BETA,USER_3,/DC=org/DC=cilogon/C=US/O=Google/CN=Tim Ampe A448,Tim Ampe,MF_3 Observatory Manager,T_AMPE
 VOID,USER_10,TBD_subject,User 10,MF_RSN Manager,
 VOID,USER_11,TBD_subject,User 11,MF_RSN Observatory Operator,
@@ -52,3 +53,4 @@ BETA,M_LOCKER,/DC=org/DC=cilogon/C=US/O=Google/CN=Martin Locker A6799,Martin Loc
 BETA,C_LICHTENWALNER,"/DC=org/DC=cilogon/C=US/O=Rutgers, The State University of New Jersey/CN=Charles Lichtenwalner A847",Sage Lichtenwalner,EPE User,C_LICHTENWALNER
 BETA,G_CHAVEZ,/DC=org/DC=cilogon/C=US/O=University of California-San Diego/CN=Gabriela Chavez A6985,Gabriela Chavez,CG Facility Manager,G_CHAVEZ
 BETA,J_COSGROVE,/DC=org/DC=cilogon/C=US/O=Google/CN=John Cosgrove A6975,John Cosgrove,CGSN Facility Operator,J_COSGROVE
+BETA,M_HARRINGTON,/DC=org/DC=cilogon/C=US/O=University of Washington/CN=MICHAEL JOHN HARRINGTON A7071,Mike Harrington,RSN Facility Manager,M_HARRINGTON

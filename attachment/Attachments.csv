@@ -31,7 +31,7 @@ BETA_SYS,ATT26,DPROD58,1341-00020_Data_Product_SPEC_PRESWAT_OOI.pdf,1341-00020_D
 BETA_SYS,ATT27,DPROD59,1341-00040_Data_Product_SPEC_PRACSAL_OOI.pdf,1341-00040_Data_Product_SPEC_PRACSAL_OOI,OOI Data Product Specification,BLOB,application/pdf,,,,,
 BETA_SYS,ATT28,DPROD60,1341-00050_Data_Product_SPEC_DENSITY_OOI.pdf,1341-00050_Data_Product_SPEC_DENSITY_OOI,OOI Data Product Specification,BLOB,application/pdf,,,,,
 VOID,ATT29,DPROD85,lc_test_global_range.csv,lc_test_global_range,Global Range Test QC Reference LC_TEST,REFERENCE,text/csv,,,Luke Campbell,,
-BETA,ATT30,DPROD85,Data_QC_Lookup_Table_Global_Range_Test_2013-2-21.csv,Data_QC_Lookup_Table_Global_Range_Test_2013-2-21,Data QC Lookup Table Global Range Test,REFERENCE,text/csv,,,Luke Campbell,,PARSE1
-BETA,ATT31,DPROD85,Data_QC_Lookup_Table_spike_test_updated.csv,Data_QC_Lookup_Table_spike_test_updated,Data QC Lookup Table Spike Test,REFERENCE,text/csv,,,Luke Campbell,,PARSE4
-BETA,ATT32,DPROD85,Data_QC_Lookup_Table_Stuck_Value_Test.csv,Data_QC_Lookup_Table_Stuck_Value_Test,Data QC Lookup Table Stuck Value Test,REFERENCE,text/csv,,,Luke Campbell,,PARSE2
-BETA,ATT33,DPROD85,Data_QC_Lookup_Table_Trend_Test.csv,Data_QC_Lookup_Table_Trend_Test,Data QC Lookup Table Trend Test,REFERENCE,text/csv,,,Luke Campbell,,PARSE5
+VOID,ATT30,DPROD85,Data_QC_Lookup_Table_Global_Range_Test_2013-2-21.csv,Data_QC_Lookup_Table_Global_Range_Test_2013-2-21,Data QC Lookup Table Global Range Test,REFERENCE,text/csv,,,Luke Campbell,,PARSE1
+VOID,ATT31,DPROD85,Data_QC_Lookup_Table_spike_test_updated.csv,Data_QC_Lookup_Table_spike_test_updated,Data QC Lookup Table Spike Test,REFERENCE,text/csv,,,Luke Campbell,,PARSE4
+VOID,ATT32,DPROD85,Data_QC_Lookup_Table_Stuck_Value_Test.csv,Data_QC_Lookup_Table_Stuck_Value_Test,Data QC Lookup Table Stuck Value Test,REFERENCE,text/csv,,,Luke Campbell,,PARSE2
+VOID,ATT33,DPROD85,Data_QC_Lookup_Table_Trend_Test.csv,Data_QC_Lookup_Table_Trend_Test,Data QC Lookup Table Trend Test,REFERENCE,text/csv,,,Luke Campbell,,PARSE5

@@ -1,11 +1,11 @@
 Scenario,confluence,ID,owner_id,org_ids,site_id,device_id,activate,d/name,d/description,constraint_ids,coordinate_system,context_type
 STOP!,"Changes to this doc can break the nose tests or interfere with test systems!  BEFORE making changes, please read https://confluence.oceanobservatories.org/display/CIDev/Preload+development.  AFTER making changes, please TEST, make a copy of this sheet, and commit the new URL to ion_loader.py!",,,,,,,,,,,
-OOIR2_X,,DEP_BTST_P1,USER_1,MF_3,PS_BTST_RSN,PD_BTST_RSN1,TRUE,Deployment of Bench Test Platform,Deployment of Bench Test Platform,,,CabledNodeDeploymentContext
-OOIR2_X,,DEP_BTST_1,USER_1,MF_3,IS_BTST_SBE37,ID_BTST_SBE37,TRUE,Deployment of SBE37SMP Instrument for Demo,Deployment of SBE37SMP Instrument for Demo,,,CabledInstrumentDeploymentContext
-OOIR2_X,,DEP_BTST_2,USER_1,MF_3,IS_BTST_CTDSIM0,ID_BTST_CTDSIM0,TRUE,Deployment of CTD Simulator,Deployment of CTD Simulator,,,CabledInstrumentDeploymentContext
-OOIR2_X,,DEP_BTST_3,USER_1,MF_3,IS_BTST_CTDSIM1,ID_BTST_CTDSIM1,TRUE,Deployment of CTD Simulator 1 Demo,Deployment of CTD Simulator 1 Demo,,,CabledInstrumentDeploymentContext
-OOIR2_X,,DEP_BTST_4,USER_1,MF_3,IS_BTST_CTDSIM1,ID_BTST_CTDSIM2,FALSE,Deployment of CTD Simulator 2 Demo,Deployment of CTD Simulator 2 Demo,,,CabledInstrumentDeploymentContext
-OOIR2_X,,DEP_BTST_CG1,USER_1,MF_3,PS_BTST_CG,PD_BTST_CG1,FALSE,Deployment of CG demo platform,Deployment of CG demo platform,,,RemotePlatformDeploymentContext
+OOIR2_DEMO,,DEP_BTST_P1,USER_1,MF_3,PS_BTST_RSN,PD_BTST_RSN1,TRUE,Deployment of Bench Test Platform,Deployment of Bench Test Platform,,,CabledNodeDeploymentContext
+OOIR2_DEMO,,DEP_BTST_1,USER_1,MF_3,IS_BTST_SBE37,ID_BTST_SBE37,TRUE,Deployment of SBE37SMP Instrument for Demo,Deployment of SBE37SMP Instrument for Demo,,,CabledInstrumentDeploymentContext
+OOIR2_DEMO,,DEP_BTST_2,USER_1,MF_3,IS_BTST_CTDSIM0,ID_BTST_CTDSIM0,TRUE,Deployment of CTD Simulator,Deployment of CTD Simulator,,,CabledInstrumentDeploymentContext
+OOIR2_DEMO,,DEP_BTST_3,USER_1,MF_3,IS_BTST_CTDSIM1,ID_BTST_CTDSIM1,TRUE,Deployment of CTD Simulator 1 Demo,Deployment of CTD Simulator 1 Demo,,,CabledInstrumentDeploymentContext
+OOIR2_DEMO,,DEP_BTST_4,USER_1,MF_3,IS_BTST_CTDSIM1,ID_BTST_CTDSIM2,FALSE,Deployment of CTD Simulator 2 Demo,Deployment of CTD Simulator 2 Demo,,,CabledInstrumentDeploymentContext
+OOIR2_DEMO,,DEP_BTST_CG1,USER_1,MF_3,PS_BTST_CG,PD_BTST_CG1,FALSE,Deployment of CG demo platform,Deployment of CG demo platform,,,RemotePlatformDeploymentContext
 R2_DEMO_X,"This is a subdevice of PDev3, no additional deployment required.",DEP1,USER_1,MF_3,LOGINS3,ID3,TRUE,SBE Simulator 1 Deployment,deployment of first device,,,CabledNodeDeploymentContext
 BETA_X,"This is a subdevice of PDev3, no additional deployment required.",DEP2,USER_1,MF_3,LOGINS4,ID12,TRUE,SBE37SMP Deployment,Demo Deployment of SBE37SMP Instrument,,,CabledNodeDeploymentContext
 BETA,,DEP3,USER_1,MF_3,LP3,PDEV3,TRUE,Platform Deployment,deployment of platform device 1,TEMP1,,CabledNodeDeploymentContext

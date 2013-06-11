@@ -15,4 +15,5 @@ DataProduct:
   processing_level: string
   ooi_short_name: string
   ooi_product_name: string
+  parent: small_string
 

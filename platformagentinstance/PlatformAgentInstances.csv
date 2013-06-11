@@ -1,7 +1,7 @@
 Scenario,ID,owner_id,org_ids,platform_agent_id,platform_device_id,unused/start_agent,pai/name,pai/description,driver_config,platform_id,agent_device_map,agent_streamconfig_map,alerts,publish_rate
 STOP!,"Changes to this doc can break the nose tests or interfere with test systems!  BEFORE making changes, please read https://confluence.oceanobservatories.org/display/CIDev/Preload+development.  AFTER making changes, please TEST, make a copy of this sheet, and commit the new URL to ion_loader.py!",,,,,,,,,,,,,
 DOC,,,,,,only base node in topology should start,,,"if using the simulator, this column MUST use definitions from the simulator configuration network.yml","if using the simulator, this MUST be a value defined in the simulator configuration network.yml",don't need -- already have platform_device_id in colF for each platform_id,define from streamdef and parameter dictionary L360,references a list of Alerts sheet ids,"publishing rate (aparam_pubrate_config) for the agent, zero means publish every granule as it arrives"
-"BETA,OOIR2_X",PAI5,USER_1,MF_3,PA1,PDEV3,TRUE,Platform Agent,RSN Platform Agent Instance,"oms_uri: embsimulator,
+"BETA,OOIR2_DEMO",PAI5,USER_1,MF_3,PA1,PDEV3,TRUE,Platform Agent,RSN Platform Agent Instance,"oms_uri: embsimulator,
 attributes.MVPC_pressure_1.read_write: read,
 attributes.MVPC_pressure_1.group: pressure,
 attributes.MVPC_pressure_1.precision: 0.04,

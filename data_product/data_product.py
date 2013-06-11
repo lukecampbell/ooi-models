@@ -59,7 +59,8 @@ def base(connection):
                     description=row['dp/description'],
                     processing_level=row['dp/processing_level_code'],
                     ooi_short_name=row['dp/ooi_short_name'],
-                    ooi_product_name=row['dp/ooi_product_name']
+                    ooi_product_name=row['dp/ooi_product_name'],
+                    parent=row['parent'],
                     )
             except TypeError:
                 print row

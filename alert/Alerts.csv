@@ -13,4 +13,4 @@ BETAX,CTDBP4,IntervalAlarmDef,density_min_max,Pressure reading is > 5 meters fro
 NOSE,NOSE_ALARM,IntervalAlarmDef,test_temp_warning,Temperature is below the normal range of 50.0 and above.,WARNING,50<temp<=100,
 NOSE,NOSE_ALARM2,IntervalAlarmDef,test_density_warning,Temperature is below the normal range of 50.0 and above.,WARNING,density<=10,
 BETA,A_TEMP,,temperature_warning_interval,Temperature is below the normal range of 50.0 and above.,WARNING,50<temp,"stream_name: parsed, aggregate_type: 2, alert_class: IntervalAlert"
-BETA,A_LATE,,late_data_warning,Expected data has not arrived.,WARNING,,"stream_name: parsed, aggregate_type: 1, time_delta: 2, alert_class: LateDataAlert"
+BETA,A_LATE,,late_data_warning,Expected data has not arrived.,ALERT,,"stream_name: parsed, aggregate_type: 1, time_delta: 2, alert_class: LateDataAlert"

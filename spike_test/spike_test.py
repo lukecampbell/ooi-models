@@ -22,9 +22,9 @@ def base(connection):
             instrument_class = row['Instrument Class']
             reference_designator = row['Reference Designator']
             data_products = row['Data Products']
-            units = row['Unit']
+            units = row['Units']
             try:
-                accuracy = float(row['Accuracy'])
+                accuracy = float(row['ACC'])
             except ValueError:
                 accuracy = None
             try:
