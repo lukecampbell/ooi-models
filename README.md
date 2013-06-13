@@ -8,16 +8,13 @@
 2. In PostgreSQL, create a new database or use an existing one, the one I use is called 'work'
 3. Clone this repo
 
-```
-    git clone https://github.com/lukecampbell/ooi-models
-    cd ooi-models
-```
+        git clone https://github.com/lukecampbell/ooi-models
+        cd ooi-models
+
 4. Edit the `scripts.py` file and replace the `connection_string` with the correct information
 5. Run the scripts.py file to bootstrap and initialize the database
 
-```  
-    python scripts.py
-```
+        python scripts.py
 
 
 ## Notes
