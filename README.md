@@ -5,6 +5,7 @@
 1. In a new virtualenv pip install the following packages
  - `requests`
  - `Flask-MVC`
+ - `psycopg2`
 2. In PostgreSQL, create a new database or use an existing one, the one I use is called 'work'
 3. Clone this repo
 
