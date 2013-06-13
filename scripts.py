@@ -188,13 +188,17 @@ gradienttest,
 trend_test,
 user,
     ]
+
+from flask_mvc.model.psql import *
+connection_string = "dbname='work' user='luke' host='localhost'"
+
 def download_all():
     for module in download_modules:
         print 'Download for ' + module.__name__
         module.download()
 
 def initialize_all():
-    conn = all_modules[0].connection()
+    conn = PSQLConnection(connection_string)
     try:
         parameter_dictionary.drop_view(conn)
     except:
