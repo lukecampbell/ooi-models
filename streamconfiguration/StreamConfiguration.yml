@@ -1,9 +1,0 @@
-StreamConfiguration:
-  scenario: small_string
-  id: small_string*
-  name: string
-  parameter_dictionary_name: string
-  records_per_granule: small_string
-  granule_publish_rate: small_string
-
-

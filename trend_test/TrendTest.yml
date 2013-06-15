@@ -1,8 +1,0 @@
-TrendTest:
-  instrument_array: string
-  instrument_class: string
-  reference_designator: string*
-  data_products: string*
-  time_interval: double
-  polynomial_order: integer
-  standard_deviation: double

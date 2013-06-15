@@ -1,6 +1,0 @@
-Scenario,ID,owner_id,confluence,m/geospatial_geodetic_crs,m/geospatial_vertical_crs,m/geospatial_latitude_units,m/geospatial_longitude_units,m/geospatial_vertical_units,m/geospatial_vertical_positive
-STOP!,"Changes to this doc can break the nose tests or interfere with test systems!  BEFORE making changes, please read https://confluence.oceanobservatories.org/display/CIDev/Preload+development.  AFTER making changes, please TEST, make a copy of this sheet, and commit the new URL to ion_loader.py!",,,,,,,,
-DOC,IDs must be unique across ALL scenarios. Scenarios are ignored during preload,,"defines ""GeospatialCoordinateReferenceSystem"" objects used by geospatial constraints",,,,,,
-BETA,SUBMERGED,USER_1,https://confluence.oceanobservatories.org/display/CIDev/Preload+constraints,http://www.opengis.net/def/crs/EPSG/0/4326 ,http://www.opengis.net/def/cs/EPSG/0/6498 ,degrees_north ,degrees_east,meter ,down 
-R2_DEMO,AERIAL,USER_1,https://confluence.oceanobservatories.org/display/CIDev/Preload+constraints,http://www.opengis.net/def/crs/EPSG/0/4269,http://www.opengis.net/def/cs/EPSG/0/6499,degrees_north,degrees_east,meter,up
-IDK,SUBMERGED1,USER_1,https://confluence.oceanobservatories.org/display/CIDev/Preload+constraints,http://www.opengis.net/def/crs/EPSG/0/4326 ,http://www.opengis.net/def/cs/EPSG/0/6498 ,degrees_north ,degrees_east,meter ,down 

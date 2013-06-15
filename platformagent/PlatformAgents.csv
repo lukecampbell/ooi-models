@@ -1,5 +1,0 @@
-Scenario,ID,owner_id,lcstate,org_ids,platform_model_ids,pa/name,pa/description,pa/agent_version,pa/driver_module,pa/driver_class,stream_configurations
-STOP!,"Changes to this doc can break the nose tests or interfere with test systems!  BEFORE making changes, please read https://confluence.oceanobservatories.org/display/CIDev/Preload+development.  AFTER making changes, please TEST, make a copy of this sheet, and commit the new URL to ion_loader.py!",,,,,,,,,,
-NOSE,PA_TEST,USER_1,DEPLOYED_AVAILABLE,MF_TEST,PM12,Unit Test Platform Agent,RSN Platform Agent Using OMS Simulator,0.1,ion.agents.platform.rsn.rsn_platform_driver,RSNPlatformDriver,"SC1,NOSE_STREAMCONFIG"
-OOIR2_DEMO,PA1,,DEPLOYED_AVAILABLE,"MF_3,MF_RSN",,RSN Platform Agent,RSN Platform Agent Using OMS Simulator,0.1,ion.agents.platform.rsn.rsn_platform_driver,RSNPlatformDriver,"SC1,SC9"
-BETA,PA1,USER_1,DEPLOYED_AVAILABLE,MF_3,PM12,RSN Platform Agent,RSN Platform Agent Using OMS Simulator,0.1,ion.agents.platform.rsn.rsn_platform_driver,RSNPlatformDriver,"SC1,SC9"
