@@ -1,8 +1,0 @@
-Parser:
-  scenario: small_string
-  id: small_string*
-  name: string
-  module: memo
-  method: string
-  config: memo
-  description: memo

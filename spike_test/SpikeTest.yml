@@ -1,9 +1,0 @@
-SpikeTest:
-  instrument_array: string
-  instrument_class: string
-  reference_designator: string*
-  data_products: string*
-  units: string
-  accuracy: double
-  spike_n: double
-  spike_l: double

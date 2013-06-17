@@ -1,9 +1,0 @@
-Alert:
-  scenario: string
-  id: string*
-  name: string
-  message: memo
-  type: small_string
-  range: small_string
-  config: memo
-
