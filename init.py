@@ -3,8 +3,7 @@ from utils.utils import xls_parse_from_url
 from sqlalchemy import create_engine
 from sqlalchemy.exc import ArgumentError
 from sqlalchemy.orm import sessionmaker
-from logging import getLogger
-log = getLogger(__name__)
+from utils.log import log
 engine = create_engine('postgresql+psycopg2://luke@localhost/work')
 Session = sessionmaker()
 Session.configure(bind=engine)
@@ -23,6 +22,7 @@ def initialize_database(path=MASTER_DOC):
         try:
             csv_model = CSVModel(doc).create_model(k)
             model_instances[k] = csv_model.from_csv(doc)
+            log.info("Parsed sheet %s" % k)
         except ArgumentError:
             log.exception("Couldn't load %s" % k)
             continue
@@ -39,6 +39,7 @@ def initialize_database(path=MASTER_DOC):
                 session.rollback()
                 from traceback import print_exc
                 print_exc(e)
+        log.info("Initialized %s" % k)
 
 if __name__ == '__main__':
     initialize_database()
