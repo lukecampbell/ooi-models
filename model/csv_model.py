@@ -82,3 +82,6 @@ class CSVModel:
     def create_all(cls,engine):
         Base.metadata.create_all(engine)
 
+    @classmethod
+    def drop_all(cls, engine):
+        Base.metadata.drop_all(engine)
