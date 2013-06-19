@@ -1,8 +1,8 @@
 #!/usr/bin/env python
-from model.csv_model import Base
+from model.csv_model import Base, BaseModel
 from sqlalchemy import Column, Integer, String, ForeignKey, ForeignKeyConstraint
 
-class ParameterRef(Base):
+class ParameterRef(Base,BaseModel):
     __tablename__ = 'parameterrefs'
     id = Column(Integer, primary_key=True)
     pdict_scenario = Column(String)

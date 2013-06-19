@@ -4,6 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from csv import DictReader
 import os
 import re
+import requests
 Base = declarative_base()
 
 from sqlalchemy import Column, Integer, String
@@ -27,8 +28,16 @@ class CSVModel:
         else:
             raise IOError('Unable to parse CSV')
 
+    @classmethod
+    def sanitize(cls, s):
+        pass1 =  re.sub(r'[/& +\(\)\\\-\*#\?,]', '_', s.lower())
+        pass2 = re.sub(r'_+', '_', pass1)
+        pass3 = pass2.strip('_')
+        return pass3
+
     def create_model(self, name):
         columns = self.csv[0].split(',')
+        primary_key_set = False
         
         type_map = {'extend_existing':True}
         if name.endswith('s'):
@@ -38,11 +47,15 @@ class CSVModel:
         for column in columns:
             if column.lower() == 'id':
                 type_map['id'] = Column(String, primary_key=True)
+                primary_key_set = True
             elif column.lower() == 'scenario':
                 type_map['scenario'] = Column(String, primary_key=True)
+                primary_key_set = True
             else:
-                col = re.sub(r'[/ ]', '_', column.lower())
+                col = self.sanitize(column)
                 type_map[col] = Column(String)
+        if not primary_key_set:
+            type_map['__id__'] = Column(Integer, primary_key=True)
 
         
         def from_csv(cls,csv):
@@ -68,15 +81,17 @@ class CSVModel:
                 for k,v in row.iteritems():
                     if k is None:
                         continue
-                    name = re.sub(r'[/ ]', '_', k.lower())
+                    name = self.sanitize(k)
                     init_map[name] = v
                 retval.append(cls(**init_map))
             return retval
         type_map['from_csv'] = classmethod(from_csv)
 
-        model = type(name, (Base,), dict(**type_map))
+        model = type(name, (Base,BaseModel), dict(**type_map))
 
         return model
+
+
 
     @classmethod
     def create_all(cls,engine):
@@ -85,3 +100,17 @@ class CSVModel:
     @classmethod
     def drop_all(cls, engine):
         Base.metadata.drop_all(engine)
+
+    @classmethod
+    def clear(cls):
+        Base.metadata.clear()
+
+class BaseModel:
+
+    @classmethod
+    def create(cls, engine):
+        Base.metadata.create_all(bind=engine, tables=[cls.__table__])
+
+    @classmethod
+    def drop(cls, engine):
+        Base.metadata.drop_all(bind=engine, tables=[cls.__table__])
