@@ -118,7 +118,7 @@ def initialize_saf(database='data/objects_20130619_152029.xls'):
     log.info('Initialized SAF Data instances')
 
 if __name__ == '__main__':
-    #initialize_database()
+    initialize_database()
     initialize_saf()
     session.close()
 
