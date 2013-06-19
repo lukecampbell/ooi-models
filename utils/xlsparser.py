@@ -8,6 +8,7 @@ import csv
 import StringIO
 import xlrd
 import re
+import cjson
 
 
 class XLSParser(object):
@@ -79,6 +80,13 @@ class XLSParser(object):
             value = xlrd.error_text_from_code[value]
         if isinstance(value, basestring):
             value = re.sub(r'\n','',value)
+            stripped = value.strip()
+            if stripped.startswith('[') and stripped.endswith(']'): #Maybe a list?
+                try:
+                    tmp = cjson.decode(value)
+                    value = ','.join(tmp)
+                except:
+                    return value
         return value
 
     @classmethod
