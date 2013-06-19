@@ -5,6 +5,7 @@ from csv import DictReader
 import os
 import re
 import requests
+import csv
 Base = declarative_base()
 
 from sqlalchemy import Column, Integer, String
@@ -36,7 +37,7 @@ class CSVModel:
         return pass3
 
     def create_model(self, name):
-        columns = self.csv[0].split(',')
+        columns = csv.reader(self.csv).next()
         primary_key_set = False
         
         type_map = {'extend_existing':True}

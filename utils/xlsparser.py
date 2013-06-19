@@ -78,7 +78,7 @@ class XLSParser(object):
         elif type == 5: # ERROR
             value = xlrd.error_text_from_code[value]
         if isinstance(value, basestring):
-            value = re.sub(r'[\n,]','',value)
+            value = re.sub(r'\n','',value)
         return value
 
     @classmethod
