@@ -3,7 +3,9 @@
 ## Installation
 
 1. In a new virtualenv pip install the following packages
-    pip install -r requirements.txt
+
+        pip install -r requirements.txt
+
 2. In PostgreSQL, create a new database or use an existing one, the one I use is called 'work'
 3. Clone this repo
 
