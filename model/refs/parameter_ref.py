@@ -14,3 +14,4 @@ class ParameterRef(Base,BaseModel):
             ForeignKeyConstraint(['param_scenario', 'param_id'], ['parameterdefs.scenario', 'parameterdefs.id']),
             {})
 
+

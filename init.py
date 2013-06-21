@@ -1,11 +1,17 @@
 from model.csv_model import CSVModel, Base
-from model.views import initialize_view, drop_view
+from model.views import initialize_view, drop_view, initialize_saf_instrument_view, drop_saf_instrument_view
 from utils.utils import xls_parse_from_url
 from sqlalchemy import create_engine
 from sqlalchemy.exc import ArgumentError
 from sqlalchemy.orm import sessionmaker
 from utils.log import log
-engine = create_engine('postgresql+psycopg2://luke@localhost/work')
+import os
+import sys
+import signal
+#conn_string = 'sqlite:///:memory:'
+conn_string = 'postgresql+psycopg2://luke@localhost/work'
+
+engine = create_engine(conn_string)
 Session = sessionmaker()
 Session.configure(bind=engine)
 session = Session()
@@ -14,6 +20,7 @@ MASTER_DOC = "https://docs.google.com/spreadsheet/pub?key=0AttCeOvLP6XMdG82NHZfS
 
 # Global for models
 models = {}
+child_pids = []
 
 
 def initialize_database(path=MASTER_DOC):
@@ -39,7 +46,7 @@ def initialize_database(path=MASTER_DOC):
             log.exception("Couldn't load %s" % k)
             continue
     # We want a late load so that the order is preserved and deterministic
-    from model.refs import ParameterRef
+    from model.refs.parameter_ref import ParameterRef
 
     log.info('Dropping view')
     drop_view(engine)
@@ -59,19 +66,23 @@ def initialize_database(path=MASTER_DOC):
                 print_exc(e)
         log.info("Initialized %s" % k)
     log.info("Initializing Parameter References and Associations")
-    pdicts = session.query(models['ParameterDictionary']).all()
+    pdicts = [(pdict.scenario, pdict.id, pdict.parameter_ids) for pdict in model_instances['ParameterDictionary']]
     log.info("Loaded ParameterDictionary into memory")
-    params = {p.id: p for p in session.query(models['ParameterDefs']).all()}
+    params = {p.id : p.scenario for p in model_instances['ParameterDefs']}
     log.info("Loaded Parameters into Memory")
-    for pdict in pdicts:
-        pids = pdict.parameter_ids.replace(' ', '') # strip white space
-        pids = pids.split(',')
-        for pid in pids:
-            if pid not in params:
-                log.error("Couldn't find %s in parameters" % pid)
-                continue
-            parameter = params[pid]
-            pref = ParameterRef(pdict_id=pdict.id, pdict_scenario=pdict.scenario, param_id=parameter.id, param_scenario=parameter.scenario)
+    if engine.name == 'postgresql':
+        speedy_parameter_load(pdicts, params)
+    else:
+        linear_parameter_load(pdicts, params, session)
+
+def linear_parameter_load(pdicts, params, session):
+    from model.refs.parameter_ref import ParameterRef
+    for pdict_scenario, pdict_id, pdict_parameter_ids in pdicts:
+        param_ids = pdict_parameter_ids.replace(' ', '') # strip white space,
+        param_ids = param_ids.split(',')
+        for param_id in param_ids:
+            param_scenario = params[param_id]
+            pref = ParameterRef(pdict_id=pdict_id, pdict_scenario=pdict_scenario, param_id=param_id, param_scenario=param_scenario)
             session.add(pref)
             try:
                 session.commit()
@@ -79,8 +90,32 @@ def initialize_database(path=MASTER_DOC):
                 log.exception("Couldn't load reference")
                 session.rollback()
 
-def initialize_saf(database='data/objects_20130619_152029.xls'):
+def speedy_parameter_load(pdicts, params):
+    global child_pids
+    assert len(pdicts) > 4
+    signal.signal(signal.SIGINT, signal_handler)
+    for i in xrange(4):
+        sample = pdicts[i*len(pdicts)/4 : (i+1)*len(pdicts)/4]
+        cpid = os.fork()
+        if cpid:
+            child_pids.append(cpid)
+        else:
+            log.info('Child Process Launched')
+            engine = create_engine(conn_string)
+            Session = sessionmaker()
+            Session.configure(bind=engine)
+            session = Session()
+            linear_parameter_load(sample, params, session)
+            session.close()
+            sys.exit(0)
+    for i,cpid in enumerate(child_pids):
+        os.waitpid(cpid, 0)
+        log.info('Child %s Finished' % i)
 
+    child_pids = []
+
+
+def initialize_saf(database='data/objects_20130619_152029.xls'):
     global models
 
     CSVModel.clear()
@@ -93,7 +128,7 @@ def initialize_saf(database='data/objects_20130619_152029.xls'):
         try:
             csv_model = CSVModel(doc).create_model('saf_%s' % k)
             models[csv_model.__name__] = csv_model
-            model_instances[k] = csv_model.from_csv(doc)
+            model_instances[csv_model.__name__] = csv_model.from_csv(doc)
             log.info("Parsed sheet %s" % k)
         except ArgumentError:
             log.exception("Couldn't load %s" % k)
@@ -101,9 +136,17 @@ def initialize_saf(database='data/objects_20130619_152029.xls'):
         except TypeError:
             log.exception("Couldn't load %s" % k)
             continue
+    from model.refs.saf_instrument_ref import SAFInstrumentRef
 
+    log.info("Dropping SAF Views")
+    drop_saf_instrument_view(engine)
+    log.info("Dropping SAF Models")
     CSVModel.drop_all(engine)
+    log.info("Creating SAF Models")
     CSVModel.create_all(engine)
+    log.info("Creating SAF Views")
+    initialize_saf_instrument_view(engine)
+
     
     for k,v in model_instances.iteritems():
         for inst in v:
@@ -114,8 +157,63 @@ def initialize_saf(database='data/objects_20130619_152029.xls'):
                 session.rollback()
                 from traceback import print_exc
                 print_exc(e)
+                raise
         log.info('Initialized %s' % k)
     log.info('Initialized SAF Data instances')
+    instruments = model_instances['saf_instrument']
+    instruments = [(i.id, i.data_product_list) for i in instruments]
+    log.info("Loaded instruments into memory")
+    if engine.name == 'postgresql':
+        speedy_saf_ref(instruments)
+    else:
+        linear_saf_ref(instruments, session)
+    
+
+
+def linear_saf_ref(instances,session):
+    from model.refs.saf_instrument_ref import SAFInstrumentRef
+    for i_id, dp_ids in instances:
+        dp_ids.replace(' ', '')
+        dp_ids = dp_ids.split(',')
+        for dp_id in dp_ids:
+            inst_ref = SAFInstrumentRef(instrument_id=i_id, data_product_id=dp_id)
+            session.add(inst_ref)
+            try:
+                session.commit()
+            except:
+                log.exception("Couldn't load reference")
+                session.rollback()
+
+def speedy_saf_ref(instances):
+    global child_pids
+    assert len(instances) > 4
+    signal.signal(signal.SIGINT, signal_handler)
+    for i in xrange(4): # Spawn four children
+        sample = instances[i*len(instances)/4 : (i+1)*len(instances)/4]
+        cpid = os.fork()
+        if cpid:
+            child_pids.append(cpid)
+        else:
+            log.info('Child Process Launched')
+            engine = create_engine(conn_string)
+            Session = sessionmaker()
+            Session.configure(bind=engine)
+            session = Session()
+            linear_saf_ref(sample, session)
+            session.close()
+            sys.exit(0)
+
+    for i,cpid in enumerate(child_pids):
+        os.waitpid(cpid,0)
+        log.info('Child %s Finished' % i)
+    child_pids = []
+
+
+def signal_handler(s, frame):
+    global child_pids
+    for c_pid in child_pids:
+        os.kill(c_pid, signal.SIGINT)
+    sys.exit(0)
 
 if __name__ == '__main__':
     initialize_database()
