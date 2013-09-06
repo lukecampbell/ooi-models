@@ -115,7 +115,7 @@ def speedy_parameter_load(pdicts, params):
     child_pids = []
 
 
-def initialize_saf(database='data/objects_20130619_152029.xls'):
+def initialize_saf(database='data/objects_20130702_140450.xls'):
     global models
 
     CSVModel.clear()
