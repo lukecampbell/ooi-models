@@ -28,6 +28,7 @@ SELECT
     p.review_status as review_status,
     p.review_comment as review_comment,
     p.long_name as long_name,
+    p.visible as visible,
     pfunc.id as pfunc_id,
     pfunc.name as pfunc_name,
     pfunc.instrument_class as pfunc_instrument_class,
