@@ -1,5 +1,6 @@
 from model.csv_model import CSVModel, Base
-from model.views import initialize_view, drop_view, initialize_saf_instrument_view, drop_saf_instrument_view
+from model.views import initialize_view, drop_view, initialize_saf_instrument_view, drop_saf_instrument_view, drop_dp_view, initialize_dp_view
+from model.views import drop_qc_view, initialize_qc_view
 from utils.utils import xls_parse_from_url
 from sqlalchemy import create_engine
 from sqlalchemy.exc import ArgumentError
@@ -49,11 +50,13 @@ def initialize_database(path=MASTER_DOC):
     from model.refs.parameter_ref import ParameterRef
 
     log.info('Dropping view')
+    drop_dp_view(engine)
     drop_view(engine)
     CSVModel.drop_all(engine)
     CSVModel.create_all(engine)
     log.info('Creating view')
     initialize_view(engine)
+    initialize_dp_view(engine)
 
     for k,v in model_instances.iteritems():
         for inst in v:
@@ -115,7 +118,7 @@ def speedy_parameter_load(pdicts, params):
     child_pids = []
 
 
-def initialize_saf(database='data/objects_20130702_140450.xls'):
+def initialize_saf(database='data/objects_20131126_112742.xls'):
     global models
 
     CSVModel.clear()
@@ -140,13 +143,14 @@ def initialize_saf(database='data/objects_20130702_140450.xls'):
 
     log.info("Dropping SAF Views")
     drop_saf_instrument_view(engine)
+    drop_qc_view(engine)
     log.info("Dropping SAF Models")
     CSVModel.drop_all(engine)
     log.info("Creating SAF Models")
     CSVModel.create_all(engine)
     log.info("Creating SAF Views")
     initialize_saf_instrument_view(engine)
-
+    initialize_qc_view(engine)
     
     for k,v in model_instances.iteritems():
         for inst in v:

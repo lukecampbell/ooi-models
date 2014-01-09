@@ -120,3 +120,48 @@ def drop_saf_instrument_view(engine):
     conn = engine.connect()
     conn.execute('DROP VIEW IF EXISTS saf_instrument_view')
 
+
+def initialize_qc_view(engine):
+    conn = engine.connect()
+    conn.execute('''SELECT saf_data_products.code, saf_data_products.data_product_name,
+    saf_data_products.data_product_level,
+    saf_data_products.evaluate_polynomial_polyval_qc,
+    saf_data_products.global_range_test_glblrng_qc,
+    saf_data_products.gradient_test_gradtst_qc,
+    saf_data_products.local_range_test_loclrng_qc,
+    saf_data_products.modulus_modulus_qc,
+    saf_data_products.solar_elevation_solarel_qc,
+    saf_data_products.spike_test_spketst_qc,
+    saf_data_products.stuck_value_test_stuckvl_qc,
+    saf_data_products.trend_test_trndtst_qc
+   FROM saf_data_products
+  WHERE saf_data_products.evaluate_polynomial_polyval_qc::text = 'applicable'::text OR saf_data_products.global_range_test_glblrng_qc::text = 'applicable'::text OR saf_data_products.gradient_test_gradtst_qc::text = 'applicable'::text OR saf_data_products.local_range_test_loclrng_qc::text = 'applicable'::text OR saf_data_products.modulus_modulus_qc::text = 'applicable'::text OR saf_data_products.solar_elevation_solarel_qc::text = 'applicable'::text OR saf_data_products.spike_test_spketst_qc::text = 'applicable'::text OR saf_data_products.stuck_value_test_stuckvl_qc::text = 'applicable'::text OR saf_data_products.trend_test_trndtst_qc::text = 'applicable'::text;''')
+
+def drop_qc_view(engine):
+    conn = engine.connect()
+    conn.execute('DROP VIEW IF EXISTS qc_view')
+
+def initialize_dp_view(engine):
+    conn = engine.connect()
+    conn.execute('''CREATE OR REPLACE VIEW public.dp_view AS 
+ SELECT dp.scenario AS dp_scenario, 
+    sd.scenario AS sd_scenario, 
+    pdview.pdict_scenario, 
+    pdview.scenario AS pd_scenario, 
+    dp.id AS dp_id, 
+    pdview.pdict_id AS pdict_id,
+    dp.dp_name, 
+    sd.sdef_name, 
+    pdview.pdict_name as pdict_name,
+    pdview.id AS pd_id, 
+    pdview.name AS pd_name,
+    pdview.parameter_type AS parameter_type, 
+    pdview.value_encoding AS value_encoding
+   FROM pdict_view pdview
+   JOIN streamdefinitions sd ON sd.parameter_dictionary::text = pdview.pdict_id::text
+   JOIN dataproducts dp ON dp.stream_def_id::text = sd.id::text;''')
+
+def drop_dp_view(engine):
+    conn = engine.connect()
+    conn.execute('DROP VIEW IF EXISTS dp_view')
+
