@@ -7,6 +7,9 @@
         pip install -r requirements.txt
 
 2. In PostgreSQL, create a new database or use an existing one, the one I use is called 'work'
+
+        createdb work
+
 3. Clone this repo
 
         git clone https://github.com/lukecampbell/ooi-models
